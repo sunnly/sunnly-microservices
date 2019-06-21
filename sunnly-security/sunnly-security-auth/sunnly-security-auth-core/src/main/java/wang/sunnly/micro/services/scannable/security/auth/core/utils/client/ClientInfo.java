@@ -1,6 +1,6 @@
 package wang.sunnly.micro.services.scannable.security.auth.core.utils.client;
 
-import wang.sunnly.micro.services.scannable.security.auth.core.utils.jwt.IJWTInfo;
+import wang.sunnly.micro.services.scannable.security.auth.core.utils.IJWTInfo;
 
 /**
  * @author Sunnly

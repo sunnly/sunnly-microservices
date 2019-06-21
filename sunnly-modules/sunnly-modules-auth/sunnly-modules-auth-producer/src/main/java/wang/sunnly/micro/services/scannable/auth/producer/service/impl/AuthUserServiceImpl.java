@@ -9,9 +9,9 @@ import wang.sunnly.micro.services.scannable.auth.producer.service.AuthUserServic
 import wang.sunnly.micro.services.scannable.auth.producer.util.JWTTokenUtils;
 import wang.sunnly.micro.services.scannable.common.core.entity.JWTAuthenticationUser;
 import wang.sunnly.micro.services.scannable.common.core.entity.UserInfo;
+import wang.sunnly.micro.services.scannable.common.core.exception.SecurityInvalidException;
+import wang.sunnly.micro.services.scannable.common.core.status.SecurityInvalidStatus;
 import wang.sunnly.micro.services.scannable.security.auth.core.utils.jwt.JWTInfo;
-import wang.sunnly.micro.services.scannable.security.core.exception.SecurityInvalidException;
-import wang.sunnly.micro.services.scannable.security.core.status.SecurityInvalidStatus;
 
 import java.util.Map;
 

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import wang.sunnly.micro.services.scannable.common.core.exception.BaseException;
 import wang.sunnly.micro.services.scannable.common.core.exception.BaseRuntimeException;
+import wang.sunnly.micro.services.scannable.common.core.exception.SecurityInvalidException;
 import wang.sunnly.micro.services.scannable.common.web.msg.BaseResponse;
 
 import javax.servlet.http.HttpServletResponse;
@@ -30,14 +31,20 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(BaseRuntimeException.class)
-    public BaseResponse baseRuntimeExceptionHandler(HttpServletResponse response, BaseException ex) {
+    public BaseResponse baseRuntimeExceptionHandler(HttpServletResponse response, BaseRuntimeException ex) {
+        logger.error(ex.getMessage(),ex);
+        response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+        return new BaseResponse(ex.getStatus(), ex.getMessage());
+    }
+    @ExceptionHandler(SecurityInvalidException.class)
+    public BaseResponse securityInvalidExceptionHandler(HttpServletResponse response, SecurityInvalidException ex) {
         logger.error(ex.getMessage(),ex);
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
         return new BaseResponse(ex.getStatus(), ex.getMessage());
     }
 
     @ExceptionHandler(Exception.class)
-    public BaseResponse oExceptionHandler(HttpServletResponse response, Exception ex) {
+    public BaseResponse mExceptionHandler(HttpServletResponse response, Exception ex) {
         logger.error(ex.getMessage(),ex);
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
         return new BaseResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage());

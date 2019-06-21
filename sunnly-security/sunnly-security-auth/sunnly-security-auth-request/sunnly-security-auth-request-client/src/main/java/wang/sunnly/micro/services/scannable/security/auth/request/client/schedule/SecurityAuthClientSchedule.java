@@ -1,6 +1,8 @@
 package wang.sunnly.micro.services.scannable.security.auth.request.client.schedule;
 
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
@@ -24,6 +26,8 @@ import java.util.List;
 @EnableScheduling
 public class SecurityAuthClientSchedule {
 
+    private Logger logger = LoggerFactory.getLogger(getClass());
+
     @Autowired
     private SecurityAuthClientProperties securityAuthClientProperties;
 
@@ -41,6 +45,7 @@ public class SecurityAuthClientSchedule {
      */
 // TODO   @Scheduled(cron = "0/30 * * * * ?")
     public void refreshAllowedClient(){
+        logger.info("【SecurityAuthClientSchedule：refreshAllowedClient】：开始获取允许访问的微服务");
         //从鉴权服务器获取允许访问的微服务
         ObjectRestResponse<List<String>> allowClient = securityAuthClientFeign.getAllowClient(securityAuthClientProperties.getId(),
                 securityAuthClientProperties.getSecret());
@@ -49,7 +54,7 @@ public class SecurityAuthClientSchedule {
         }else{
             this.allowedClient = null;
         }
-
+        logger.info("【SecurityAuthClientSchedule：refreshAllowedClient】：获取允许访问的微服务结束");
     }
 
     public List<String> getAllowedClient(){
@@ -61,16 +66,17 @@ public class SecurityAuthClientSchedule {
     //定时刷新微服务token
 //  TODO   @Scheduled(cron = "0 0/10 * * * ?")
     public void refreshClientToken(){
+        logger.info("【SecurityAuthClientSchedule：refreshClientToken】：开始刷新微服务Token");
         ObjectRestResponse<String> accessToken = securityAuthClientFeign.getAccessToken(securityAuthClientProperties.getId(),
                 securityAuthClientProperties.getSecret());
         if (accessToken.getStatus() == HttpStatus.OK.value()){
             this.clientToken = accessToken.getData();
         }
+        logger.info("【SecurityAuthClientSchedule：refreshClientToken】：刷新微服务Token结束");
     }
 
     public String getClientToken(){
         if (this.clientToken == null){
-            //获取token
             refreshClientToken();
         }
         return this.clientToken;

@@ -1,13 +1,12 @@
-package wang.sunnly.micro.services.scannable.security.auth.core.utils;
+package wang.sunnly.micro.services.scannable.security.auth.core.utils.help;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import wang.sunnly.micro.services.scannable.common.core.exception.SecurityInvalidException;
+import wang.sunnly.micro.services.scannable.common.core.status.SecurityInvalidStatus;
 import wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthUserProperties;
-import wang.sunnly.micro.services.scannable.security.auth.core.utils.jwt.IJWTInfo;
-import wang.sunnly.micro.services.scannable.security.auth.core.utils.jwt.JWTHelper;
-import wang.sunnly.micro.services.scannable.security.core.exception.SecurityInvalidException;
-import wang.sunnly.micro.services.scannable.security.core.status.SecurityInvalidStatus;
+import wang.sunnly.micro.services.scannable.security.auth.core.utils.IJWTInfo;
 
 import java.security.SignatureException;
 
@@ -32,7 +31,7 @@ public class JWTTokenHelper{
         } catch (IllegalArgumentException ex) {
             throw new SecurityInvalidException(SecurityInvalidStatus.USER_TOKEN_EMPTY);
         }catch (Exception ex){
-            throw new SecurityInvalidException(SecurityInvalidStatus.USER_FORBIDDEN);
+            throw new SecurityInvalidException(SecurityInvalidStatus.USER_TOKEN_FORBIDDEN);
         }
     }
 }

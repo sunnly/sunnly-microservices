@@ -20,5 +20,6 @@
         <module>sunnly-tools-redis</module>
         <module>sunnly-tools-feign</module>
         <module>sunnly-tools-verification</module>
+        <module>sunnly-tools-swagger</module>
     </modules>
 </project>

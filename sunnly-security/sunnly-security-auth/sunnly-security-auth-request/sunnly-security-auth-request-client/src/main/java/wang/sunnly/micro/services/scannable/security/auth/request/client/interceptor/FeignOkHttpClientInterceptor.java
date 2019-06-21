@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import wang.sunnly.micro.services.scannable.common.core.status.SecurityInvalidStatus;
 import wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthClientProperties;
 import wang.sunnly.micro.services.scannable.security.auth.request.client.schedule.SecurityAuthClientSchedule;
-import wang.sunnly.micro.services.scannable.security.core.status.SecurityInvalidStatus;
 
 import java.io.IOException;
 

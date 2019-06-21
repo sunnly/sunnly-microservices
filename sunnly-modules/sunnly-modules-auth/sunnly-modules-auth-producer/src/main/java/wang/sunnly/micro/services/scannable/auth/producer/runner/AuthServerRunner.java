@@ -1,11 +1,13 @@
 package wang.sunnly.micro.services.scannable.auth.producer.runner;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
 import wang.sunnly.micro.services.scannable.auth.producer.properties.SshKeyProperties;
-import wang.sunnly.micro.services.scannable.security.auth.core.utils.RsaKeyHelper;
+import wang.sunnly.micro.services.scannable.security.auth.core.utils.help.RsaKeyHelper;
 
 import java.util.Map;
 
@@ -20,6 +22,7 @@ import java.util.Map;
  */
 @Configuration
 public class AuthServerRunner implements CommandLineRunner {
+    Logger logger = LoggerFactory.getLogger(getClass());
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
 
@@ -35,7 +38,7 @@ public class AuthServerRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
+        logger.info(String.format("【AuthServerRunner:CommandLineRunner】 开始获取公钥秘钥"));
         //首先从redis中获取公钥和秘钥封
         if(redisTemplate.hasKey(SUNNLY_REDIS_SERVICE_PUB_KEY)
                 &&redisTemplate.hasKey(SUNNLY_REDIS_SERVICE_PRI_KEY)
@@ -69,5 +72,7 @@ public class AuthServerRunner implements CommandLineRunner {
             redisTemplate.opsForValue().set(SUNNLY_REDIS_USER_PUB_KEY,
                     RsaKeyHelper.toHexString(userMap.get("pubKey")));
         }
+        logger.info(String.format("【AuthServerRunner:CommandLineRunner】 获取公钥秘钥结束"));
+
     }
 }

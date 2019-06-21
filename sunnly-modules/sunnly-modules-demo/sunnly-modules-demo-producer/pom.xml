@@ -42,7 +42,7 @@
         <!--先测试请求加入header-->
         <dependency>
             <groupId>wang.sunnly</groupId>
-            <artifactId>sunnly-security-auth-request-user</artifactId>
+            <artifactId>sunnly-security-auth-request-server</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
 

@@ -1,5 +1,7 @@
 package wang.sunnly.micro.services.scannable.security.auth.core.utils.jwt;
 
+import wang.sunnly.micro.services.scannable.security.auth.core.utils.IJWTInfo;
+
 import java.io.Serializable;
 import java.util.Objects;
 

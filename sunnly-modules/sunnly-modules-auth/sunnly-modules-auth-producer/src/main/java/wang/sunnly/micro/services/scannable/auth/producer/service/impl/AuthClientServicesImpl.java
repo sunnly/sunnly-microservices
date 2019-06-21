@@ -9,10 +9,10 @@ import wang.sunnly.micro.services.scannable.auth.producer.entity.AuthClient;
 import wang.sunnly.micro.services.scannable.auth.producer.mapper.AuthClientMapper;
 import wang.sunnly.micro.services.scannable.auth.producer.properties.SshKeyProperties;
 import wang.sunnly.micro.services.scannable.auth.producer.service.AuthClientServices;
+import wang.sunnly.micro.services.scannable.common.core.exception.SecurityInvalidException;
+import wang.sunnly.micro.services.scannable.common.core.status.SecurityInvalidStatus;
 import wang.sunnly.micro.services.scannable.security.auth.core.utils.client.ClientInfo;
-import wang.sunnly.micro.services.scannable.security.auth.core.utils.jwt.JWTHelper;
-import wang.sunnly.micro.services.scannable.security.core.exception.SecurityInvalidException;
-import wang.sunnly.micro.services.scannable.security.core.status.SecurityInvalidStatus;
+import wang.sunnly.micro.services.scannable.security.auth.core.utils.help.JWTHelper;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -58,7 +58,7 @@ public class AuthClientServicesImpl implements AuthClientServices {
         AuthClient client = new AuthClient();
         client.setCode(clientId);
         client = authClientMapper.selectOne(client);
-        if (client !=null && !StringUtils.equals(client.getSecret(),secret)){
+        if (client == null || !StringUtils.equals(client.getSecret(),secret)){
             //clientId和secret非法
             throw new SecurityInvalidException(SecurityInvalidStatus.CLIENT_OR_SECRENT_ERROR);
         }

@@ -1,4 +1,4 @@
-package wang.sunnly.micro.services.scannable.security.core.status;
+package wang.sunnly.micro.services.scannable.common.core.status;
 
 public enum SecurityInvalidStatus {
 
@@ -27,14 +27,15 @@ public enum SecurityInvalidStatus {
     //用户相关-----------------4XXXX--------------------------
     USER_PASS_INVALID_CODE(40001,"用户名或密码错误"),
     USER_VALIDATE_ERR(40002,"验证失败"),
-    USER_TOKEN_ERR(40003,"用户名或密码错误"),
+
     USER_TOKEN_INVALID_ERR(40004,"用户名或密码错误"),
 
     USER_TOKEN_EMPTY(40310,"jwt token is null or empty!"),
     USER_TOKEN_EXPIRED(40311,"jwt token expired!"),
     USER_TOKEN_SIGNATURE_ERROR(40312,"jwt token signature error!"),
-    USER_FORBIDDEN(50321, "jwt is Forbidden!"),
-
+    USER_TOKEN_ERROR_CODE(40101, "token Error!"),
+    USER_TOKEN_ERR(40102,"用户名或密码错误"),
+    USER_TOKEN_FORBIDDEN(40301, "token Forbidden!"),
 
 
 

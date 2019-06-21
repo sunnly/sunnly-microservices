@@ -1,6 +1,8 @@
 package wang.sunnly.micro.services.scannable.common.core.constants;
 
 /**
+ *
+ * 本地线程存储key
  * @author Sunnly
  * @ClassName BaseThreadLocalConstants
  * @Date 2019/6/17 17:49
@@ -12,5 +14,5 @@ public class BaseThreadLocalConstants {
     public static final String CONTEXT_KEY_USERNAME = "CONTEXT_KEY_USERNAME";
     public static final String CONTEXT_KEY_USER_NAME = "CONTEXT_KEY_USER_NAME";
     public static final String CONTEXT_KEY_USER_TOKEN = "CONTEXT_KEY_USER_TOKEN";
-    public static final Integer EX_CLIENT_INVALID_CODE = 40301;
+//    public static final Integer EX_CLIENT_INVALID_CODE = 40301;
 }

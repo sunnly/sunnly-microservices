@@ -1,4 +1,4 @@
-package wang.sunnly.micro.services.scannable.security.auth.core.utils.jwt;
+package wang.sunnly.micro.services.scannable.security.auth.core.utils;
 
 /**
  * 

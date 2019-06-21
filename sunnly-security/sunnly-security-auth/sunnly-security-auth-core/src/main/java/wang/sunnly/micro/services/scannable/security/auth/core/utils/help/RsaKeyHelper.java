@@ -1,4 +1,4 @@
-package wang.sunnly.micro.services.scannable.security.auth.core.utils;
+package wang.sunnly.micro.services.scannable.security.auth.core.utils.help;
 
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
