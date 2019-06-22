@@ -5,6 +5,7 @@ import wang.sunnly.micro.services.scannable.auth.producer.mapper.AuthClientServi
 import wang.sunnly.micro.services.scannable.auth.producer.service.AuthClientServiceService;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class AuthClientServiceServiceImpl implements AuthClientServiceService {

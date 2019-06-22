@@ -32,11 +32,14 @@ sunnly:
 
   security:
     auth:
+#      service-id: sunnly-auth-producer
       user:
         token-header: Authorization
         rsa-secret: rasUserSecret
 
       client:
+        id: ace-auth
+        secret: 123456
         token-header: x-client-token
         rsa-secret: rsaClientSecret
         expire: 3600

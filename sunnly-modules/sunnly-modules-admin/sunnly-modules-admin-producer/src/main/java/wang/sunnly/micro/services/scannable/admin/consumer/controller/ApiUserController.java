@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import wang.sunnly.micro.services.scannable.admin.consumer.service.ApiUserService;
 import wang.sunnly.micro.services.scannable.common.core.entity.PermissionInfo;
 import wang.sunnly.micro.services.scannable.common.core.entity.UserInfo;
+import wang.sunnly.micro.services.scannable.security.auth.core.annotation.IgnoreUserToken;
 
 import java.util.List;
 import java.util.Map;
@@ -37,6 +38,7 @@ public class ApiUserController {
     }
 
     @PostMapping("/user/validate")
+    @IgnoreUserToken
     public @ResponseBody
     UserInfo validate(@RequestBody Map<String,String> body){
         return apiUserService.validate(body.get("username"), body.get("password"));

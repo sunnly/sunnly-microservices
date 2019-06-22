@@ -8,14 +8,14 @@ import wang.sunnly.micro.services.scannable.security.auth.core.properties.Securi
 
 /**
  *
+ * 鉴权服务器请求头封装拦截器
  * 封装Feign调用请求头,将服务鉴权信息封装到请求头
- * 此微服务中不引入security-client，故在这里进行封装
  * @author Sunnly
  * @ClassName ClientTokenInterceptor
  * @Date 2019/6/18 14:40
  * @Version 1.0
  */
-public class ClientTokenInterceptor implements RequestInterceptor {
+public class ClientRequestTokenInterceptor implements RequestInterceptor {
 
     @Autowired
     SecurityAuthClientProperties securityAuthClientProperties;

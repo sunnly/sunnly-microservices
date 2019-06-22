@@ -28,7 +28,7 @@ sunnly:
       service-id: sunnly-auth-producer
 
       client:
-        id: ace-admin
+        id: ace-gate
         secret: 123456
         token-header: x-client-token
 

@@ -1,4 +1,4 @@
-package wang.sunnly.micro.services.scannable.security.auth.response.user.annotation;
+package wang.sunnly.micro.services.scannable.security.auth.core.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

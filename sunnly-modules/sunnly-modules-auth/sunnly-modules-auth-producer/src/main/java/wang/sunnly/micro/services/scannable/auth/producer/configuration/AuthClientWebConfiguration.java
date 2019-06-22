@@ -1,15 +1,12 @@
-package wang.sunnly.micro.services.scannable.security.auth.response.client.configuration;
+package wang.sunnly.micro.services.scannable.auth.producer.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.core.annotation.Order;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import wang.sunnly.micro.services.scannable.security.auth.core.interceptor.ClientAuthInterceptorAdapter;
-import wang.sunnly.micro.services.scannable.security.auth.response.client.interceptor.ClientAuthInterceptor;
 import wang.sunnly.micro.services.scannable.security.auth.response.core.properties.AuthCheckClientPathFilterProperties;
 
 /**
@@ -18,11 +15,11 @@ import wang.sunnly.micro.services.scannable.security.auth.response.core.properti
  * @Date 2019/6/16 0016 21:26
  **/
 @Configuration
-public class AuthReqClientWebConfiguration extends WebMvcConfigurationSupport {
+public class AuthClientWebConfiguration extends WebMvcConfigurationSupport {
 
     @Autowired
     private AuthCheckClientPathFilterProperties authReqClientPathFilterProperties;
-//
+
     @Autowired
     @Lazy
     @Order(6)
@@ -35,12 +32,4 @@ public class AuthReqClientWebConfiguration extends WebMvcConfigurationSupport {
             .excludePathPatterns(authReqClientPathFilterProperties.getExclude());
 
     }
-
-    @Bean
-    @ConditionalOnMissingBean(ClientAuthInterceptorAdapter.class)
-    @Order(5)
-    public ClientAuthInterceptorAdapter clientAuthInterceptorAdapter(){
-        return new ClientAuthInterceptor();
-    }
-
 }

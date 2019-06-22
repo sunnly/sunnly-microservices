@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import wang.sunnly.micro.services.scannable.common.core.status.SecurityInvalidStatus;
 import wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthClientProperties;
-import wang.sunnly.micro.services.scannable.security.auth.request.client.schedule.SecurityAuthClientSchedule;
+import wang.sunnly.micro.services.scannable.security.auth.core.store.ClientTokenStore;
 
 import java.io.IOException;
 
@@ -31,7 +31,7 @@ public class FeignOkHttpClientInterceptor implements Interceptor {
 
     @Autowired
     @Lazy
-    private SecurityAuthClientSchedule securityAuthClientSchedule;
+    private ClientTokenStore clientTokenStore;
 
     @Override
     public Response intercept(Chain chain) throws IOException {
@@ -40,18 +40,18 @@ public class FeignOkHttpClientInterceptor implements Interceptor {
         }
         Request request = chain.request().newBuilder()
             .header(securityAuthClientProperties.getTokenHeader(),
-                    securityAuthClientSchedule.getClientToken())
+                    clientTokenStore.getClientToken())
             .build();
         Response response = chain.proceed(request);
 
         if(HttpStatus.FORBIDDEN.value() == response.code()){
             //微服务token已过期，刷新token重新请求
             if (response.body().string().contains(SecurityInvalidStatus.CLIENT_FORBIDDEN.value()+"")) {
-                securityAuthClientSchedule.refreshClientToken();
+                clientTokenStore.refreshClientToken();
                 request = chain.request()
                         .newBuilder()
                         .header(securityAuthClientProperties.getTokenHeader(),
-                                securityAuthClientSchedule.getClientToken())
+                                clientTokenStore.getClientToken())
 
                         .build();
                 response = chain.proceed(request);

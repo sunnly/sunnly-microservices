@@ -10,4 +10,6 @@ public interface AuthClientServices {
     List<String> getAllowClient(String clientId, String secret);
 
     void validate(String clientId, String secret);
+
+    List<String> getAllowedClient(String clientId);
 }

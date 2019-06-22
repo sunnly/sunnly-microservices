@@ -7,10 +7,10 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import wang.sunnly.micro.services.scannable.common.core.exception.SecurityInvalidException;
 import wang.sunnly.micro.services.scannable.common.core.handler.BaseThreadLocalHandler;
 import wang.sunnly.micro.services.scannable.common.core.status.SecurityInvalidStatus;
+import wang.sunnly.micro.services.scannable.security.auth.core.annotation.IgnoreUserToken;
 import wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthUserProperties;
-import wang.sunnly.micro.services.scannable.security.auth.core.utils.help.JWTTokenHelper;
 import wang.sunnly.micro.services.scannable.security.auth.core.utils.IJWTInfo;
-import wang.sunnly.micro.services.scannable.security.auth.response.user.annotation.IgnoreUserToken;
+import wang.sunnly.micro.services.scannable.security.auth.core.utils.help.JWTTokenHelper;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

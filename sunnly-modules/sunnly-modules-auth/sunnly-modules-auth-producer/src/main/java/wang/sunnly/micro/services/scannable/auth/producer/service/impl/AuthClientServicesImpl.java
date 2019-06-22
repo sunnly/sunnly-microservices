@@ -15,6 +15,7 @@ import wang.sunnly.micro.services.scannable.security.auth.core.utils.client.Clie
 import wang.sunnly.micro.services.scannable.security.auth.core.utils.help.JWTHelper;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -65,4 +66,20 @@ public class AuthClientServicesImpl implements AuthClientServices {
         return client;
     }
 
+    @Override
+    public List<String> getAllowedClient(String clientId) {
+        AuthClient info = getClient(clientId);
+        List<String> clients = authClientMapper.selectAllowedClient(info.getId() + "");
+        if(clients==null) {
+            new ArrayList<String>();
+        }
+        return clients;
+    }
+
+    private AuthClient getClient(String clientId) {
+        AuthClient client = new AuthClient();
+        client.setCode(clientId);
+        client = authClientMapper.selectOne(client);
+        return client;
+    }
 }

@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import wang.sunnly.micro.services.scannable.auth.producer.properties.SshKeyProperties;
 import wang.sunnly.micro.services.scannable.auth.producer.service.AuthClientServices;
 import wang.sunnly.micro.services.scannable.common.web.msg.ObjectRestResponse;
+import wang.sunnly.micro.services.scannable.security.auth.core.annotation.IgnoreClientToken;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ import java.util.List;
  **/
 @RestController
 @RequestMapping("client")
+@IgnoreClientToken
 public class AuthClientController {
 
     @Autowired
@@ -48,8 +50,7 @@ public class AuthClientController {
     }
 
     /**
-     * 获取服务pubKey，公钥一般不会变
-     * 这里主要是验证是否修改了权限
+     * 获取服务pubKey
      * @param clientId
      * @param secret
      * @return

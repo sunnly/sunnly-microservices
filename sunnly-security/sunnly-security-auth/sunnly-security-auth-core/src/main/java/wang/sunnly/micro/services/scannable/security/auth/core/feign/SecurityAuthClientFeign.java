@@ -1,4 +1,4 @@
-package wang.sunnly.micro.services.scannable.security.auth.request.client.feign;
+package wang.sunnly.micro.services.scannable.security.auth.core.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +14,7 @@ import java.util.List;
  * @author Sunnly
  * @create 2019/6/21 16:26
  */
-@FeignClient(value = "${sunnly.security.auth.service-id}"
-)
+@FeignClient(value = "${sunnly.security.auth.service-id:sunnly-auth}")
 public interface SecurityAuthClientFeign {
     @PostMapping("/client/token")
     ObjectRestResponse<String> getAccessToken(@RequestParam("clientId") String clientId,
@@ -24,4 +23,12 @@ public interface SecurityAuthClientFeign {
     @GetMapping("/client/myClient")
     public ObjectRestResponse<List<String>> getAllowClient(@RequestParam("clientId") String clientId,
                                                            @RequestParam("secret") String secret);
+
+    @PostMapping("/client/servicePubKey")
+    public ObjectRestResponse<byte[]> getServicePubKey(@RequestParam("clientId") String clientId, @RequestParam("secret") String secret);
+
+    @PostMapping("/client/userPubKey")
+    public ObjectRestResponse<byte[]> getUserPubKey(@RequestParam("clientId") String clientId,
+                                                    @RequestParam("secret") String secret);
+
 }

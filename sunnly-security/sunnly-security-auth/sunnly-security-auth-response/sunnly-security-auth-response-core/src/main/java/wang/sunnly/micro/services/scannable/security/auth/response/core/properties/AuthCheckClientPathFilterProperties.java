@@ -1,8 +1,8 @@
-package wang.sunnly.micro.services.scannable.security.auth.response.client.properties;
+package wang.sunnly.micro.services.scannable.security.auth.response.core.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
-import wang.sunnly.micro.services.scannable.security.auth.response.core.properties.AuthReqPathFilterProperties;
+import wang.sunnly.micro.services.scannable.security.auth.response.core.properties.AuthCheckPathFilterProperties;
 
 /**
  * AuthReqClientPathFilterProperties
@@ -12,7 +12,7 @@ import wang.sunnly.micro.services.scannable.security.auth.response.core.properti
  */
 @Component
 @ConfigurationProperties(prefix="sunnly.path-patterns.client")
-public class AuthReqClientPathFilterProperties extends AuthReqPathFilterProperties {
+public class AuthCheckClientPathFilterProperties extends AuthCheckPathFilterProperties {
 
 
 }

@@ -1,41 +1,44 @@
-package wang.sunnly.micro.services.scannable.security.auth.response.client.interceptor;
+package wang.sunnly.micro.services.scannable.auth.producer.interceptor;
 
-import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.method.HandlerMethod;
+import wang.sunnly.micro.services.scannable.auth.producer.info.ClientTokenInfo;
+import wang.sunnly.micro.services.scannable.auth.producer.service.AuthClientServices;
 import wang.sunnly.micro.services.scannable.common.core.exception.SecurityInvalidException;
 import wang.sunnly.micro.services.scannable.common.core.status.SecurityInvalidStatus;
 import wang.sunnly.micro.services.scannable.security.auth.core.annotation.IgnoreClientToken;
 import wang.sunnly.micro.services.scannable.security.auth.core.interceptor.ClientAuthInterceptorAdapter;
 import wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthClientProperties;
-import wang.sunnly.micro.services.scannable.security.auth.core.store.ClientTokenStore;
 import wang.sunnly.micro.services.scannable.security.auth.core.utils.IJWTInfo;
-import wang.sunnly.micro.services.scannable.security.auth.core.utils.help.ClientTokenHelper;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * 服务鉴权拦截器
+ * 鉴权服务器服务鉴权拦截器
+ * ClientAuthInterceptor
+ *
  * @author Sunnly
- * @ClassName ServiceAuthRestInterceptor
- * @Date 2019/6/12 0012 20:15
- **/
-public class ClientAuthInterceptor extends ClientAuthInterceptorAdapter {
+ * @create 2019/6/22 0022 10:08
+ */
+
+public class ClientResponseTokenInterceptor extends ClientAuthInterceptorAdapter {
+    private Logger logger = LoggerFactory.getLogger(ClientResponseTokenInterceptor.class);
 
     @Autowired
-    private ClientTokenStore clientTokenStore;
+    private AuthClientServices authClientServices;
 
     @Autowired
-    private ClientTokenHelper clientTokenHelper;
+    private ClientTokenInfo clientTokenInfo;
 
     @Autowired
     private SecurityAuthClientProperties securityAuthClientProperties;
-
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        HandlerMethod handlerMethod = (HandlerMethod) handler;
+            HandlerMethod handlerMethod = (HandlerMethod) handler;
         //获取IgnoreServiceToken注解
         IgnoreClientToken annotation = handlerMethod.getBeanType().getAnnotation(IgnoreClientToken.class);
         if (annotation == null){
@@ -45,27 +48,15 @@ public class ClientAuthInterceptor extends ClientAuthInterceptorAdapter {
             //配置了不需要验证的注解，直接放行
             return super.preHandle(request, response, handler);
         }
-        //未配置忽略注解，判断是否在配置中进行
-        //获取header中的token,key值从配置文件sunnly.security.auth.client.token-header中获取
-        String tokenKey = securityAuthClientProperties.getTokenHeader();
-        if (StringUtils.isEmpty(tokenKey)){
-            throw new SecurityInvalidException(SecurityInvalidStatus.CLIENT_TOKEN_HEADER_NOT_CONFIG);
-        }
-        //获取请求头中的token,当服务鉴权时，Feign请求时将携带自己的token过来请求
-        String token = request.getHeader(tokenKey);
 
-        if(StringUtils.isEmpty(token)){
-            throw new SecurityInvalidException(SecurityInvalidStatus.CLIENT_TOKEN_EMPTY);
-        }
-        //解析请求头中的token，服务端token需要通过公钥解析，从鉴权服务器获取公钥
-        IJWTInfo infoFromToken = clientTokenHelper.getInfoFromToken(token);
+        String token = request.getHeader(securityAuthClientProperties.getTokenHeader());
+        IJWTInfo infoFromToken = clientTokenInfo.getInfoFromToken(token);
         String uniqueName = infoFromToken.getUniqueName();
-        for (String client : clientTokenStore.getAllowedClient()){
-            if (StringUtils.equals(client, uniqueName)){
+        for(String client: authClientServices.getAllowedClient(securityAuthClientProperties.getId())){
+            if(client.equals(uniqueName)){
                 return super.preHandle(request, response, handler);
             }
         }
         throw new SecurityInvalidException(SecurityInvalidStatus.CLIENT_FORBIDDEN);
     }
-
 }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import wang.sunnly.micro.services.scannable.common.core.exception.BaseException;
 import wang.sunnly.micro.services.scannable.common.core.exception.BaseRuntimeException;
 import wang.sunnly.micro.services.scannable.common.core.exception.SecurityInvalidException;
+import wang.sunnly.micro.services.scannable.common.core.exception.WebRuntimeException;
 import wang.sunnly.micro.services.scannable.common.web.msg.BaseResponse;
 
 import javax.servlet.http.HttpServletResponse;
@@ -40,6 +41,12 @@ public class GlobalExceptionHandler {
     public BaseResponse securityInvalidExceptionHandler(HttpServletResponse response, SecurityInvalidException ex) {
         logger.error(ex.getMessage(),ex);
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+        return new BaseResponse(ex.getStatus(), ex.getMessage());
+    }
+    @ExceptionHandler(WebRuntimeException.class)
+    public BaseResponse webRuntimeExceptionHandler(HttpServletResponse response, WebRuntimeException ex) {
+        logger.error(ex.getMessage(),ex);
+        response.setStatus(HttpStatus.OK.value());
         return new BaseResponse(ex.getStatus(), ex.getMessage());
     }
 

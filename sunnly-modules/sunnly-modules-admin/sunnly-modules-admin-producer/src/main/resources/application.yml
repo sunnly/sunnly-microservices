@@ -18,3 +18,23 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 30000
       connection-test-query: SELECT 1
+
+
+sunnly:
+#  feign:
+#    clients:
+#      admin: sunnly-admin-producer
+
+  security:
+    auth:
+      service-id: sunnly-auth-producer
+      user:
+        token-header: Authorization
+#        rsa-secret: rasUserSecret
+
+      client:
+        id: ace-auth
+        secret: 123456
+        token-header: x-client-token
+#        rsa-secret: rsaClientSecret
+#        expire: 3600

@@ -10,7 +10,7 @@ import java.util.List;
  * @author Sunnly
  * @create 2019/6/21 11:21
  */
-public class AuthReqPathFilterProperties {
+public class AuthCheckPathFilterProperties {
     private List<String> intercept = Lists.newArrayList();
     private List<String> exclude = Lists.newArrayList();
 

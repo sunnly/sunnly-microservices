@@ -3,9 +3,13 @@ package wang.sunnly.micro.services.scannable.module.demo.producer.feign;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import wang.sunnly.micro.services.scannable.common.core.entity.JWTAuthenticationUser;
 import wang.sunnly.micro.services.scannable.common.web.msg.ObjectRestResponse;
+import wang.sunnly.micro.services.scannable.module.demo.producer.feign.impl.ProducerTestFeignFallback;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -14,7 +18,9 @@ import java.util.List;
  * @author Sunnly
  * @create 2019/6/21 14:49
  */
-@FeignClient("sunnly-auth-producer")
+@FeignClient(value = "sunnly-auth-producer"
+//        ,fallback = ProducerTestFeignFallback.class
+)
 public interface ProducerTestFeign {
 
     @PostMapping("/client/token")
@@ -32,4 +38,9 @@ public interface ProducerTestFeign {
     @GetMapping("/client/validate")
     public boolean validateClientIdAndSecret(@RequestParam("clientId") String clientId,@RequestParam("secret")  String secret);
 
+    @PostMapping("/jwt/token")
+    public ObjectRestResponse<String> getToken(@RequestBody JWTAuthenticationUser user) throws Exception;
+
+    @PostMapping("/jwt/refresh")
+    public ObjectRestResponse<String> refreshToken() throws Exception;
 }
