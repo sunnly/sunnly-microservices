@@ -1,4 +1,4 @@
-package wang.sunnly.micro.services.scannable.security.auth.response.user.interceptor;
+package wang.sunnly.micro.services.scannable.security.auth.core.interceptor;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

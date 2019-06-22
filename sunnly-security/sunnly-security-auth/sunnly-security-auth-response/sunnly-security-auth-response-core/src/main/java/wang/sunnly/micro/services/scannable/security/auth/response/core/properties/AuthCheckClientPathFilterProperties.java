@@ -2,7 +2,7 @@ package wang.sunnly.micro.services.scannable.security.auth.response.core.propert
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
-import wang.sunnly.micro.services.scannable.security.auth.response.core.properties.AuthCheckPathFilterProperties;
+import wang.sunnly.micro.services.scannable.security.auth.core.properties.AuthCheckPathFilterProperties;
 
 /**
  * AuthReqClientPathFilterProperties

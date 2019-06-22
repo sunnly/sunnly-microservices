@@ -1,4 +1,4 @@
-package wang.sunnly.micro.services.scannable.security.auth.response.core.properties;
+package wang.sunnly.micro.services.scannable.security.auth.core.properties;
 
 import com.google.common.collect.Lists;
 
