@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import wang.sunnly.micro.services.scannable.common.core.entity.PermissionInfo;
 import wang.sunnly.micro.services.scannable.common.core.entity.UserInfo;
 import wang.sunnly.micro.services.scannable.module.demo.producer.feign.ResourcesFeign;
+import wang.sunnly.micro.services.scannable.security.auth.core.annotation.IgnoreUserToken;
 
 import java.util.List;
 import java.util.Map;
@@ -38,6 +39,7 @@ public class ResourcesController {
 
 
     @GetMapping("/jt")
+    @IgnoreUserToken
     public UserInfo jt(@RequestParam("username") String username, @RequestParam("password")  String password) throws Exception {
         Map map = Maps.newHashMap();
         map.put("username",username);

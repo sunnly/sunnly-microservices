@@ -65,7 +65,7 @@ public class ClientAuthInterceptor extends ClientAuthInterceptorAdapter {
                 return super.preHandle(request, response, handler);
             }
         }
-        throw new SecurityInvalidException(SecurityInvalidStatus.CLIENT_FORBIDDEN);
+        throw new SecurityInvalidException(SecurityInvalidStatus.CLIENT_RIGHT_INSUFFICIENT);
     }
 
 }

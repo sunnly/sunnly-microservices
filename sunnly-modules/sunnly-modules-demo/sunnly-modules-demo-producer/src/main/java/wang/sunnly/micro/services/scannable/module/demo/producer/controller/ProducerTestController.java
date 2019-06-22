@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import wang.sunnly.micro.services.scannable.common.core.entity.JWTAuthenticationUser;
 import wang.sunnly.micro.services.scannable.common.web.msg.ObjectRestResponse;
 import wang.sunnly.micro.services.scannable.module.demo.producer.feign.ProducerTestFeign;
+import wang.sunnly.micro.services.scannable.security.auth.core.annotation.IgnoreUserToken;
 
 import java.util.List;
 
@@ -33,6 +34,7 @@ public class ProducerTestController {
 
 
     @GetMapping("/jt")
+    @IgnoreUserToken
     public ObjectRestResponse<String> jt(@RequestParam("username") String username, @RequestParam("password")  String password) throws Exception {
         JWTAuthenticationUser jwtuser = new JWTAuthenticationUser();
         jwtuser.setUsername(username);

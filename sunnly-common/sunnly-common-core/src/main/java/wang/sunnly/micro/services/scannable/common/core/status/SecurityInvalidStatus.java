@@ -12,6 +12,7 @@ public enum SecurityInvalidStatus {
 
     CLIENT_OR_SECRENT_ERROR(50320,"Client not found or Client secret is error!"),
     CLIENT_FORBIDDEN(50321, "Client is Forbidden!"),
+    CLIENT_RIGHT_INSUFFICIENT(50325, "Insufficient privileges on the server side!"),
 
     NETWORK_CONNECTION_ERR(50330,"网络连接错误"),
     //用户鉴权异常
