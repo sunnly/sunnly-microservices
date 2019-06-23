@@ -35,23 +35,23 @@ public class BaseThreadLocalHandler {
 
     public static String getUserID(){
         Object value = get(BaseThreadLocalConstants.CONTEXT_KEY_USER_ID);
-        return returnObjectValue(value);
+        return Objects.toString(value,"");
     }
 
     public static String getUsername(){
         Object value = get(BaseThreadLocalConstants.CONTEXT_KEY_USERNAME);
-        return returnObjectValue(value);
+        return Objects.toString(value,"");
     }
 
 
     public static String getName(){
         Object value = get(BaseThreadLocalConstants.CONTEXT_KEY_USER_NAME);
-        return Objects.toString(value);
+        return Objects.toString(value,"");
     }
 
     public static String getToken(){
         Object value = get(BaseThreadLocalConstants.CONTEXT_KEY_USER_TOKEN);
-        return Objects.toString(value);
+        return Objects.toString(value,"");
     }
     public static void setToken(String token){set(BaseThreadLocalConstants.CONTEXT_KEY_USER_TOKEN,token);}
 
@@ -63,10 +63,6 @@ public class BaseThreadLocalHandler {
 
     public static void setUsername(String username){
         set(BaseThreadLocalConstants.CONTEXT_KEY_USERNAME,username);
-    }
-
-    private static String returnObjectValue(Object value) {
-        return value==null?null:value.toString();
     }
 
     public static void remove(){

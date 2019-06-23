@@ -16,13 +16,26 @@
         <dependency>
             <groupId>wang.sunnly</groupId>
             <artifactId>sunnly-security-core</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
+
+
     </dependencies>
     <modules>
         <module>sunnly-security-auth-core</module>
-        <module>sunnly-security-auth-common</module>
-        <module>sunnly-security-auth-request</module>
-        <module>sunnly-security-auth-response</module>
+
+        <module>sunnly-security-auth-client-core</module>
+        <module>sunnly-security-auth-client-req</module>
+        <module>sunnly-security-auth-client-res</module>
+        <module>sunnly-security-auth-client-common</module>
+        <module>sunnly-security-auth-client-server</module>
+        <module>sunnly-security-auth-client-reqs</module>
+
+        <module>sunnly-security-auth-user-core</module>
+        <module>sunnly-security-auth-user-req</module>
+        <module>sunnly-security-auth-user-res</module>
+        <module>sunnly-security-auth-user-reqs</module>
+
+        <module>sunnly-security-auth-req</module>
     </modules>
 </project>

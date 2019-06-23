@@ -7,7 +7,7 @@ import wang.sunnly.micro.services.scannable.auth.producer.properties.SshKeyPrope
 import wang.sunnly.micro.services.scannable.common.core.exception.SecurityInvalidException;
 import wang.sunnly.micro.services.scannable.common.core.status.SecurityInvalidStatus;
 import wang.sunnly.micro.services.scannable.security.auth.core.utils.IJWTInfo;
-import wang.sunnly.micro.services.scannable.security.auth.core.utils.help.JWTHelper;
+import wang.sunnly.micro.services.scannable.security.auth.core.utils.tools.JWTHelper;
 
 import java.security.SignatureException;
 
@@ -31,7 +31,7 @@ public class ClientTokenInfo {
     public IJWTInfo getInfoFromToken(String token) {
         try {
             return JWTHelper.getInfoFromToken(token,
-                    sshKeyProperties.getServicePubKey());
+                    sshKeyProperties.getClientPubKey());
         } catch (ExpiredJwtException ex) {
             throw new SecurityInvalidException(SecurityInvalidStatus.CLIENT_TOKEN_EXPIRED);
         } catch (SignatureException ex) {

@@ -17,12 +17,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class SshKeyProperties {
 
-    @Value("sunnly.security.auth.user.rsa-secret")
+    @Value("${sunnly.security.auth.user.rsa-secret}")
     private String userSecret;
-    @Value("sunnly.security.auth.client.rsa-secret")
-    private String serviceSecret;
+    @Value("${sunnly.security.auth.client.rsa-secret}")
+    private String clientSecret;
     private byte[] userPubKey;
     private byte[] userPriKey;
-    private byte[] servicePriKey;
-    private byte[] servicePubKey;
+    private byte[] clientPriKey;
+    private byte[] clientPubKey;
 }

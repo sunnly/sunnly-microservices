@@ -24,12 +24,12 @@
         <dependency>
             <groupId>wang.sunnly</groupId>
             <artifactId>sunnly-tools-nacos</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>wang.sunnly</groupId>
             <artifactId>sunnly-tools-feign</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
     <build>

@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.core.annotation.Order;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import wang.sunnly.micro.services.scannable.security.auth.core.properties.AuthCheckClientPathFilterProperties;
 import wang.sunnly.micro.services.scannable.security.auth.core.interceptor.ClientAuthInterceptorAdapter;
-import wang.sunnly.micro.services.scannable.security.auth.response.core.properties.AuthCheckClientPathFilterProperties;
 
 /**
  * @author Sunnly
@@ -29,7 +29,7 @@ public class AuthClientWebConfiguration extends WebMvcConfigurationSupport {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(clientAuthInterceptorAdapter)
             .addPathPatterns(authReqClientPathFilterProperties.getIntercept())
-            .excludePathPatterns(authReqClientPathFilterProperties.getExclude());
+                .excludePathPatterns(authReqClientPathFilterProperties.getExclude());
 
     }
 }

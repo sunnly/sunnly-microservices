@@ -31,15 +31,14 @@
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
-        <!--暂时引入服务鉴权response-->
         <dependency>
             <groupId>wang.sunnly</groupId>
-            <artifactId>sunnly-security-auth-response-client</artifactId>
+            <artifactId>sunnly-security-auth-user-res</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>wang.sunnly</groupId>
-            <artifactId>sunnly-security-auth-response-user</artifactId>
+            <artifactId>sunnly-security-auth-client-res</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
 

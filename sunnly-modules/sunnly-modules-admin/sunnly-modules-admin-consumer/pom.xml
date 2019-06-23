@@ -11,12 +11,12 @@
         <dependency>
             <groupId>wang.sunnly</groupId>
             <artifactId>sunnly-tools-mysql</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
         <dependency>
             <groupId>wang.sunnly</groupId>
             <artifactId>sunnly-common-web</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
     <build>

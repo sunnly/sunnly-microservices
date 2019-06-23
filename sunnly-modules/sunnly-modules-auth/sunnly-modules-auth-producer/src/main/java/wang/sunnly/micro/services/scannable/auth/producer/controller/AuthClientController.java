@@ -42,7 +42,7 @@ public class AuthClientController {
      * @param secret
      * @return
      */
-    @GetMapping("/myClient")
+        @GetMapping("/myClient")
     public ObjectRestResponse<List<String>> getAllowClient(@RequestParam("clientId") String clientId,@RequestParam("secret")  String secret) throws Exception {
         List<String> allowClient = authClientServices.getAllowClient(clientId, secret);
 //        ObjectRestResponse<String> a = getToken(clientId, secret);
@@ -59,7 +59,7 @@ public class AuthClientController {
     public ObjectRestResponse<byte[]> getServicePubKey(@RequestParam("clientId") String clientId,@RequestParam("secret")  String secret){
         //验证clientId和secret的有效性
         authClientServices.validate(clientId,secret);
-        return new ObjectRestResponse<byte[]>().data(sshKeyProperties.getServicePubKey());
+        return new ObjectRestResponse<byte[]>().data(sshKeyProperties.getClientPubKey());
     }
 
     /**

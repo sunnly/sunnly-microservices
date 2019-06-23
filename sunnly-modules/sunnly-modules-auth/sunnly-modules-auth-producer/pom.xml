@@ -22,42 +22,27 @@
         <dependency>
             <groupId>wang.sunnly</groupId>
             <artifactId>sunnly-tools-mysql</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
             <groupId>wang.sunnly</groupId>
             <artifactId>sunnly-tools-swagger</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
             <groupId>wang.sunnly</groupId>
             <artifactId>sunnly-tools-redis</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
-        <!--不需要鉴权用户，
-        故只引入
-        sunnly-security-auth-response-client（具有鉴权功能）
-        或
-        sunnly-security-auth-response-core（不具鉴权功能）
-        -->
         <dependency>
             <groupId>wang.sunnly</groupId>
-            <artifactId>sunnly-security-auth-response-core</artifactId>
+            <artifactId>sunnly-security-auth-client-server</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
-        <!--<dependency>
-            <groupId>wang.sunnly</groupId>
-            <artifactId>sunnly-security-auth-response-client</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>-->
-        <!--<dependency>
-            <groupId>wang.sunnly</groupId>
-            <artifactId>sunnly-security-auth-response-user</artifactId>
-            <version>${parent.version}</version>
-        </dependency>-->
+
 
     </dependencies>
     <build>

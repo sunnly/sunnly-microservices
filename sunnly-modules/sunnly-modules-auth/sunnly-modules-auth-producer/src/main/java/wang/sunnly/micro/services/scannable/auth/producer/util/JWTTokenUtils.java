@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import wang.sunnly.micro.services.scannable.auth.producer.properties.SshKeyProperties;
 import wang.sunnly.micro.services.scannable.security.auth.core.utils.IJWTInfo;
-import wang.sunnly.micro.services.scannable.security.auth.core.utils.help.JWTHelper;
+import wang.sunnly.micro.services.scannable.security.auth.core.utils.tools.JWTHelper;
 
 /**
  * JWTTokenUtils

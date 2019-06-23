@@ -12,7 +12,7 @@ import wang.sunnly.micro.services.scannable.auth.producer.service.AuthClientServ
 import wang.sunnly.micro.services.scannable.common.core.exception.SecurityInvalidException;
 import wang.sunnly.micro.services.scannable.common.core.status.SecurityInvalidStatus;
 import wang.sunnly.micro.services.scannable.security.auth.core.utils.client.ClientInfo;
-import wang.sunnly.micro.services.scannable.security.auth.core.utils.help.JWTHelper;
+import wang.sunnly.micro.services.scannable.security.auth.core.utils.tools.JWTHelper;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -37,7 +37,7 @@ public class AuthClientServicesImpl implements AuthClientServices {
         AuthClient client = getClient(clientId, secret);
         //生成token
         return JWTHelper.generateToken(new ClientInfo(client.getCode(),client.getName(),client.getId().toString()),
-                sshKeyProperties.getServicePriKey(),expire);
+                sshKeyProperties.getClientPriKey(),expire);
     }
 
     @Override
