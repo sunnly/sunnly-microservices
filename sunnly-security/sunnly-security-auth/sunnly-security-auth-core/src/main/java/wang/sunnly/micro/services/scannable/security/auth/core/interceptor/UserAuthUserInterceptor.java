@@ -60,15 +60,19 @@ public class UserAuthUserInterceptor extends HandlerInterceptorAdapter {
             }
         }
         if (StringUtils.isEmpty(token)){
-            throw new SecurityInvalidException(SecurityInvalidStatus.USER_TOKEN_ERR);
+//            throw new SecurityInvalidException(SecurityInvalidStatus.USER_TOKEN_ERR);
+            return super.preHandle(request, response, handler);
         }
+
         IJWTInfo infoFromToken = jwtTokenHelper.getInfoFromToken(token);
         //保存到本地线程存储中    ,Feign拦截器中就可以获取这些信息了
         BaseThreadLocalHandler.setUsername(infoFromToken.getUniqueName());
         BaseThreadLocalHandler.setName(infoFromToken.getName());
         BaseThreadLocalHandler.setUserID(infoFromToken.getId());
+        BaseThreadLocalHandler.setToken(token);
 
         return super.preHandle(request, response, handler);
+
     }
 
     @Override

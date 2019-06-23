@@ -36,7 +36,7 @@ public class ClientAuthInterceptor extends ClientAuthInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HandlerMethod handlerMethod = (HandlerMethod) handler;
-        //获取IgnoreServiceToken注解
+        //获取IgnoreClientToken注解
         IgnoreClientToken annotation = handlerMethod.getBeanType().getAnnotation(IgnoreClientToken.class);
         if (annotation == null){
             annotation = handlerMethod.getMethodAnnotation(IgnoreClientToken.class);
@@ -65,7 +65,7 @@ public class ClientAuthInterceptor extends ClientAuthInterceptorAdapter {
                 return super.preHandle(request, response, handler);
             }
         }
-        throw new SecurityInvalidException(SecurityInvalidStatus.CLIENT_RIGHT_INSUFFICIENT);
+        throw new SecurityInvalidException(SecurityInvalidStatus.CLIENT_RIGHT_INSUFFICIENT  );
     }
 
 }
