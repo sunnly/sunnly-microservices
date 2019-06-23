@@ -1,8 +1,7 @@
-package wang.sunnly.micro.services.scannable.security.auth.core.api;
+package wang.sunnly.micro.services.scannable.security.auth.common.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import wang.sunnly.micro.services.scannable.common.web.msg.BaseResponse;
 import wang.sunnly.micro.services.scannable.common.web.msg.ObjectRestResponse;

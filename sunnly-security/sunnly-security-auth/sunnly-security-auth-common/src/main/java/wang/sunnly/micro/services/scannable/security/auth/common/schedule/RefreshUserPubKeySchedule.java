@@ -1,10 +1,10 @@
-package wang.sunnly.micro.services.scannable.security.auth.core.schedule;
+package wang.sunnly.micro.services.scannable.security.auth.common.schedule;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import wang.sunnly.micro.services.scannable.security.auth.core.api.RefreshPubKey;
+import wang.sunnly.micro.services.scannable.security.auth.common.api.RefreshPubKey;
 
 /**
  * RefreshUserPubKeySchedule
