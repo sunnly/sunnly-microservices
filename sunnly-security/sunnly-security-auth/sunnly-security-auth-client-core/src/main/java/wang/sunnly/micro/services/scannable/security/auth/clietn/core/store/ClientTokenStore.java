@@ -35,7 +35,8 @@ public class ClientTokenStore {
     //保存微服务token
     private String clientToken;
 
-    @Value("${sunnly.security.oauth.client.signle-client:}")
+    //如果只允许指定微服务访问，则配置该属性
+    @Value("${sunnly.security.auth.client.signle-client:}")
     private String signleClient;
 
     private boolean access = true;

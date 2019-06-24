@@ -15,7 +15,7 @@ import java.util.Map;
  * @Date 2019/6/18 14:00
  * @Version 1.0
  */
-@FeignClient(value = "${sunnly.feign.clients.admin:sunnly-admin-producer}",
+@FeignClient(value = "${sunnly.feign.clients.admin:sunnly-admin}",
         configuration = FeignRequestClientConfiguration.class)
 public interface AuthUserFeign {
 

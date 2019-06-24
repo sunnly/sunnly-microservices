@@ -1,6 +1,7 @@
 package wang.sunnly.micro.services.scannable.admin.consumer.service.impl;
 
 import com.google.common.collect.Lists;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -34,10 +35,11 @@ public class ApiUserServiceImpl implements ApiUserService {
     public UserInfo validate(String username, String password) {
         UserInfo info = new UserInfo();
         TbUser tbUser = tbUserService.getUserByUsername(username);
-        if (encoder.matches(password, tbUser.getPassword())){
-            BeanUtils.copyProperties(tbUser,info);
-            info.setId(tbUser.getId().toString());
-        }
+        if (tbUser!=null)
+            if (encoder.matches(StringUtils.defaultIfEmpty(password,""), tbUser.getPassword())){
+                BeanUtils.copyProperties(tbUser,info);
+                info.setId(tbUser.getId().toString());
+            }
         return info;
     }
 

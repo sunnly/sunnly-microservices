@@ -19,7 +19,7 @@ import java.util.Map;
  * @author Sunnly
  * @create 2019/6/24 0024 0:06
  */
-@FeignClient("sunnly-demo-producer")
+@FeignClient("${sunnly.feign.clients.demo:sunnly-demo}")
 public interface TestDemoProducerFeign {
 
     @GetMapping("/test/token")

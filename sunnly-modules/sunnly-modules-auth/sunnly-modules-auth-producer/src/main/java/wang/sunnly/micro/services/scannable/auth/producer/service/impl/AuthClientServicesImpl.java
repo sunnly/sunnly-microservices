@@ -17,6 +17,7 @@ import wang.sunnly.micro.services.scannable.security.auth.core.utils.tools.JWTHe
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class AuthClientServicesImpl implements AuthClientServices {
@@ -69,6 +70,9 @@ public class AuthClientServicesImpl implements AuthClientServices {
     @Override
     public List<String> getAllowedClient(String clientId) {
         AuthClient info = getClient(clientId);
+        if (Objects.isNull(info)){
+            throw new SecurityInvalidException(SecurityInvalidStatus.CLIENT_INFO_ERR);
+        }
         List<String> clients = authClientMapper.selectAllowedClient(info.getId() + "");
         if(clients==null) {
             new ArrayList<String>();

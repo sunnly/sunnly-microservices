@@ -13,7 +13,7 @@ spring:
       discovery:
         server-addr: nacos.sunnly.wang:8848
   application:
-    name: sunnly-admin-producer
+    name: sunnly-admin
   profiles:
     active: dev
 

@@ -1,5 +1,6 @@
 package wang.sunnly.micro.services.scannable.auth.producer.interceptor;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,11 +53,14 @@ public class ClientResponseTokenInterceptor extends ClientAuthInterceptorAdapter
         String token = request.getHeader(securityAuthClientProperties.getTokenHeader());
         IJWTInfo infoFromToken = clientTokenInfo.getInfoFromToken(token);
         String uniqueName = infoFromToken.getUniqueName();
+        if (StringUtils.isEmpty(securityAuthClientProperties.getId())){
+            throw new SecurityInvalidException(SecurityInvalidStatus.CONFIG_CLIENT_ID_NULL);
+        }
         for(String client: authClientServices.getAllowedClient(securityAuthClientProperties.getId())){
             if(client.equals(uniqueName)){
                 return super.preHandle(request, response, handler);
             }
         }
-        throw new SecurityInvalidException(SecurityInvalidStatus.CLIENT_FORBIDDEN);
+        throw new SecurityInvalidException(SecurityInvalidStatus.CLIENT_ACCESS_DENIAL);
     }
 }

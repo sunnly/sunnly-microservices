@@ -33,19 +33,19 @@
         </dependency>
 
         <!--先测试请求加入header-->
-        <dependency>
+       <!-- <dependency>
             <groupId>wang.sunnly</groupId>
-            <artifactId>sunnly-security-auth-req</artifactId>
+            <artifactId>sunnly-security-auth-reqs</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>wang.sunnly</groupId>
-            <artifactId>sunnly-security-auth-client-res</artifactId>
+            <artifactId>sunnly-security-auth-reqs</artifactId>
             <version>1.0.0-SNAPSHOT</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>wang.sunnly</groupId>
-            <artifactId>sunnly-security-auth-user-res</artifactId>
+            <artifactId>sunnly-security-auth-reqs</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
 

@@ -27,15 +27,17 @@
         <module>sunnly-security-auth-client-core</module>
         <module>sunnly-security-auth-client-req</module>
         <module>sunnly-security-auth-client-res</module>
-        <module>sunnly-security-auth-client-common</module>
         <module>sunnly-security-auth-client-server</module>
         <module>sunnly-security-auth-client-reqs</module>
 
         <module>sunnly-security-auth-user-core</module>
-        <module>sunnly-security-auth-user-req</module>
-        <module>sunnly-security-auth-user-res</module>
+        <!--<module>sunnly-security-auth-user-req</module>
+        <module>sunnly-security-auth-user-res</module>-->
         <module>sunnly-security-auth-user-reqs</module>
 
         <module>sunnly-security-auth-req</module>
+        <module>sunnly-security-auth-res</module>
+
+        <module>sunnly-security-auth-reqs</module>
     </modules>
 </project>

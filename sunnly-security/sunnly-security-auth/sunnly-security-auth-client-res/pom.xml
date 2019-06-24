@@ -12,9 +12,14 @@
 
     <dependencies>
 
-        <dependency>
+        <!--<dependency>
             <groupId>wang.sunnly</groupId>
             <artifactId>sunnly-security-auth-client-common</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>-->
+        <dependency>
+            <groupId>wang.sunnly</groupId>
+            <artifactId>sunnly-security-auth-client-core</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>

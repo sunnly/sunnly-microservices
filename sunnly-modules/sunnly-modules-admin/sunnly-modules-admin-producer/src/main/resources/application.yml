@@ -21,17 +21,17 @@ spring:
 
 
 sunnly:
-#  feign:
-#    clients:
-#      admin: sunnly-admin-producer
+  feign:
+    clients:
+      auth: sunnly-auth
 
   security:
     auth:
-      service-id: sunnly-auth-producer
+      service-id: sunnly-auth
       user:
         token-header: Authorization
 
       client:
-        id: ace-auth
-        secret: 123456
+        id: sunnly-admin
+        secret: sunnly
         token-header: x-client-token

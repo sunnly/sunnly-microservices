@@ -15,7 +15,7 @@ import java.util.Map;
  * @author Sunnly
  * @create 2019/6/22 0022 21:15
  */
-@FeignClient(value = "sunnly-admin-producer")
+@FeignClient(value = "${sunnly.feign.clients.admin:sunnly-admin}")
 public interface ResourcesFeign {
 
     @GetMapping("/api/permissions")

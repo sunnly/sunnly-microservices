@@ -2,8 +2,10 @@ package wang.sunnly.micro.services.scannable.security.auth.client.req.schedule;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import wang.sunnly.micro.services.scannable.security.auth.clietn.core.store.ClientTokenStore;
 
 /**
@@ -22,8 +24,8 @@ public class SecurityAuthClientSchedule {
     @Autowired
     private ClientTokenStore clientTokenStore;
 
-    //定时刷新微服务token
-//  TODO   @Scheduled(cron = "0 0/10 * * * ?")
+    //【定时刷新服务端token】
+    @Scheduled(cron = "${sunnly.schedule.refresh-client-token:'*/20 * * * * ?'}")
     public void refreshClientToken(){
         if (clientTokenStore.isAccess()){
             clientTokenStore.refreshClientToken();

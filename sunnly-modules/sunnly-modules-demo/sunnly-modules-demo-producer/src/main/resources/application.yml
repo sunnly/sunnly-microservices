@@ -23,13 +23,25 @@ spring:
 
 
 sunnly:
+  schedule:
+#    refresh-client-token: "*/20 * * * * ?"
+#    refresh-client-pubkey: "*/10 * * * * ?"
+#    refresh-user-pubkey: "*/10 * * * * ?"
+#    refresh-allowed-client: "*/5 * * * * ?"
+
+    refresh-client-token: "* */30 * * * ?"
+    refresh-client-pubkey: "* */40 * * * ?"
+    refresh-user-pubkey: "* */50 * * * ?"
+    refresh-allowed-client: "* */45 * * * ?"
+
   security:
     auth:
-      service-id: sunnly-auth-producer
+      service-id: sunnly-auth
 
       client:
-        id: ace-gate
-        secret: 123456
+#        signle-client: sunnly-auth  # 该方法配置后只允许此微服务访问，并且不去服务端验证
+        id: sunnly-demo
+        secret: sunnly
         token-header: x-client-token
 
       user:

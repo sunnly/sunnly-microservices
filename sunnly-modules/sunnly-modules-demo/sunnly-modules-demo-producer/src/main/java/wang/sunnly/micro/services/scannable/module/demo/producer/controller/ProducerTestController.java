@@ -23,6 +23,7 @@ public class ProducerTestController {
     private ProducerTestFeign producerTestFeign;
 
     @GetMapping("/token")
+
     public ObjectRestResponse<String> getToken(@RequestParam("clientId") String clientId, @RequestParam("secret")  String secret) throws Exception {
         return producerTestFeign.getAccessToken(clientId,secret);
     }

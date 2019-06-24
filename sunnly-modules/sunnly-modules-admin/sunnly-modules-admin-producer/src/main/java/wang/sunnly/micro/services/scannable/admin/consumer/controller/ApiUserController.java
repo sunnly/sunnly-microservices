@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import wang.sunnly.micro.services.scannable.admin.consumer.service.ApiUserService;
 import wang.sunnly.micro.services.scannable.common.core.entity.PermissionInfo;
 import wang.sunnly.micro.services.scannable.common.core.entity.UserInfo;
+import wang.sunnly.micro.services.scannable.security.auth.core.annotation.IgnoreClientToken;
 import wang.sunnly.micro.services.scannable.security.auth.core.annotation.IgnoreUserToken;
 
 import java.util.List;

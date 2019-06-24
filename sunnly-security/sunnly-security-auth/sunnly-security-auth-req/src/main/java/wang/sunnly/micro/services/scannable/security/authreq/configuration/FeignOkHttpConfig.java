@@ -10,8 +10,8 @@ import org.springframework.cloud.openfeign.FeignAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
-import wang.sunnly.micro.services.scannable.security.auth.client.req.interceptor.FeignOkHttpClientInterceptor;
-import wang.sunnly.micro.services.scannable.security.auth.user.req.interceptor.FeignOkHttpUserInterceptor;
+import wang.sunnly.micro.services.scannable.security.auth.client.server.interceptor.FeignOkHttpClientInterceptor;
+import wang.sunnly.micro.services.scannable.security.auth.user.reqs.interceptor.FeignOkHttpUserInterceptor;
 
 import java.util.concurrent.TimeUnit;
 

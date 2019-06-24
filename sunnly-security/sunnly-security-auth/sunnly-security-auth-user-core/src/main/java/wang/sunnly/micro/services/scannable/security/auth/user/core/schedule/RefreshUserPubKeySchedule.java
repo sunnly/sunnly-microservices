@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import wang.sunnly.micro.services.scannable.security.auth.user.core.api.RefreshUserPubKey;
 
 /**
@@ -20,8 +21,8 @@ public class RefreshUserPubKeySchedule {
     @Autowired
     private RefreshUserPubKey refreshUserPubKey;
 
-    //TODO 定时刷新用户pubKey
-//    @Scheduled(cron = "0 0/1 * * * ?")
+    //【定时刷UserPubKey】
+    @Scheduled(cron = "${sunnly.schedule.refresh-user-pubkey:'* */40 * * * ?'}")
     public void refreshUserPubKey(){
         refreshUserPubKey.refreshUserPubKey();
     }

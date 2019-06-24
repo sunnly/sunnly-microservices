@@ -18,7 +18,7 @@ import java.util.List;
  * @author Sunnly
  * @create 2019/6/21 14:49
  */
-@FeignClient(value = "sunnly-auth-producer"
+@FeignClient(value = "${sunnly.feign.clients.auth:sunnly-auth}"
 //        ,fallback = ProducerTestFeignFallback.class
 )
 public interface ProducerTestFeign {

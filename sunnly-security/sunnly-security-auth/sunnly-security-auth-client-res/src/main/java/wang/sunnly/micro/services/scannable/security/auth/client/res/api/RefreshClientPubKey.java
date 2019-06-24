@@ -1,5 +1,8 @@
 package wang.sunnly.micro.services.scannable.security.auth.client.res.api;
 
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
@@ -16,6 +19,7 @@ import wang.sunnly.micro.services.scannable.security.auth.core.properties.Securi
  */
 @Component
 public class RefreshClientPubKey {
+    Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private SecurityAuthClientFeign securityAuthClientFeign;
@@ -24,11 +28,14 @@ public class RefreshClientPubKey {
     private SecurityAuthClientProperties securityAuthClientProperties;
 
     public void refreshClientPubKey(){
+
+        logger.info("【RefreshClientPubKey：refreshClientPubKey】开始刷新ClientPubKey");
         BaseResponse resp = securityAuthClientFeign.getServicePubKey(securityAuthClientProperties.getId(),
                 securityAuthClientProperties.getSecret());
         if (resp.getStatus() == HttpStatus.OK.value()) {
             ObjectRestResponse<byte[]> userResponse = (ObjectRestResponse<byte[]>) resp;
             securityAuthClientProperties.setPubKeyByte(userResponse.getData());
         }
+        logger.info("【RefreshClientPubKey：refreshClientPubKey】刷新ClientPubKey结束");
     }
 }
