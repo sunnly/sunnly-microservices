@@ -21,5 +21,8 @@
         <module>sunnly-tools-feign</module>
         <module>sunnly-tools-verification</module>
         <module>sunnly-tools-swagger</module>
+        <module>sunnly-tools-fastdfs</module>
+        <module>sunnly-tools-zookeeper</module>
+        <module>sunnly-tools-mq</module>
     </modules>
 </project>

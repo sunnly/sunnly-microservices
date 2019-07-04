@@ -51,6 +51,7 @@
 
         <org-springframework-social.version>1.1.6.RELEASE</org-springframework-social.version>
 
+        <fastdfs-client.version>1.27</fastdfs-client.version>
     </properties>
 
     <dependencies>
@@ -72,6 +73,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -276,7 +278,12 @@
                 <version>${org-springframework-social.version}</version>
             </dependency>
 
-
+            <!--FastDFS-->
+            <dependency>
+                <groupId>cn.bestwu</groupId>
+                <artifactId>fastdfs-client-java</artifactId>
+                <version>${fastdfs-client.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
