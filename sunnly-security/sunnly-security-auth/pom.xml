@@ -20,24 +20,24 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>wang.sunnly</groupId>
+            <artifactId>sunnly-tools-feign</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <!--jwt帮助包-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+
     </dependencies>
     <modules>
-        <module>sunnly-security-auth-core</module>
 
-        <module>sunnly-security-auth-client-core</module>
-        <module>sunnly-security-auth-client-req</module>
-        <module>sunnly-security-auth-client-res</module>
-        <module>sunnly-security-auth-client-server</module>
-        <module>sunnly-security-auth-client-reqs</module>
-
-        <module>sunnly-security-auth-user-core</module>
-        <!--<module>sunnly-security-auth-user-req</module>
-        <module>sunnly-security-auth-user-res</module>-->
-        <module>sunnly-security-auth-user-reqs</module>
-
-        <module>sunnly-security-auth-req</module>
-        <module>sunnly-security-auth-res</module>
-
-        <module>sunnly-security-auth-reqs</module>
     </modules>
 </project>

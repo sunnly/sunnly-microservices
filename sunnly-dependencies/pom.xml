@@ -14,7 +14,7 @@
     <properties>
 
         <!-- Spring Security -->
-        <spring-security-auth2.version>2.1.0.RELEASE</spring-security-auth2.version>
+        <spring-security-oauth2.version>2.1.0.RELEASE</spring-security-oauth2.version>
 
         <springloaded.version>1.2.8.RELEASE</springloaded.version>
 
@@ -117,9 +117,9 @@
 
             <!-- Spring Security -->
             <dependency>
-                <groupId>org.springframework.security.auth.boot</groupId>
-                <artifactId>spring-security-auth2-autoconfigure</artifactId>
-                <version>${spring-security-auth2.version}</version>
+                <groupId>org.springframework.security.oauth.boot</groupId>
+                <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+                <version>${spring-security-oauth2.version}</version>
             </dependency>
 
             <dependency>
@@ -303,6 +303,20 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <fork>true</fork>
+                    <meminitial>512m</meminitial>
+                    <!-- 如果不够读者可以加大 -->
+                    <maxmem>4096m</maxmem>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
     <repositories>
         <repository>
@@ -322,5 +336,6 @@
             </snapshots>
         </repository>
     </repositories>
+
 
 </project>

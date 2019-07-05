@@ -18,7 +18,7 @@ public class CustomerProducer {
     public static void main(String[] args) {
         Properties properties = new Properties();
         //kafka集群
-        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.101.13:9092,192.168.101.13:9093,192.168.101.13:9094");
+        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka.sunnly.wang:9092,kafka.sunnly.wang:9093,kafka.sunnly.wang:9094");
         //应答级别
         properties.put(ProducerConfig.ACKS_CONFIG, "all");
         //重试次数

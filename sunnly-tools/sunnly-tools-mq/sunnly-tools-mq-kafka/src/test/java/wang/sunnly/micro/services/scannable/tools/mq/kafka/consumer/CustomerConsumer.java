@@ -22,7 +22,8 @@ public class CustomerConsumer {
 
         Properties properties = new Properties();
         //kafka集群
-        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.101.13:9092,192.168.101.13:9093,192.168.101.13:9094");
+        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka.sunnly.wang:9092,kafka.sunnly.wang:9093,kafka.sunnly.wang:9094");
+//        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.101.13:9092,192.168.101.13:9093,192.168.101.13:9094");
         //消费者组ID
         properties.put(ConsumerConfig.GROUP_ID_CONFIG, "group-1");
         //是否自动提交offset
