@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import wang.sunnly.micro.services.scannable.common.core.entity.JWTAuthenticationUser;
 import wang.sunnly.micro.services.scannable.common.web.msg.ObjectRestResponse;
-import wang.sunnly.micro.services.scannable.module.demo.producer.feign.impl.ProducerTestFeignFallback;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**

@@ -46,7 +46,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>wang.sunnly.micro.services.scannable.tools.mysql.DemoConsumerApplication</mainClass>
+                    <mainClass>wang.sunnly.micro.services.scannable.DemoConsumerApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

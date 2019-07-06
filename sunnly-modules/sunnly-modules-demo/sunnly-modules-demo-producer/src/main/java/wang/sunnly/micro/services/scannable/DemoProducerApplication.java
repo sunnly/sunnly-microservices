@@ -6,7 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import tk.mybatis.spring.annotation.MapperScan;
-import wang.sunnly.micro.services.scannable.security.auth.annotation.*;
+import wang.sunnly.micro.services.scannable.security.auth.annotation.EnableSunnlyClient;
 
 /**
  * DemoProducerApplication
@@ -17,10 +17,10 @@ import wang.sunnly.micro.services.scannable.security.auth.annotation.*;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableSwagger2
-//@EnableSunnlyClient
-@EnableSunnlyUser
-@EnableSunnlyClientReq
-@EnableFeignClients(basePackages = {"wang.sunnly.micro.services.scannable"})
+@EnableFeignClients
+//@EnableScheduling
+//@SunnlyClientEnable
+@EnableSunnlyClient
 @MapperScan("wang.sunnly.micro.services.scannable.demo.producer.mapper")
 public class DemoProducerApplication {
 

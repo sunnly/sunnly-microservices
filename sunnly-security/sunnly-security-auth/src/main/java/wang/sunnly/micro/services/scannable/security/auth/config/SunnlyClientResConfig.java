@@ -6,10 +6,7 @@ import org.springframework.core.annotation.Order;
 import wang.sunnly.micro.services.scannable.security.auth.client.core.store.ClientTokenStore;
 import wang.sunnly.micro.services.scannable.security.auth.client.res.api.RefreshClientPubKey;
 import wang.sunnly.micro.services.scannable.security.auth.client.res.interceptor.ClientAuthInterceptor;
-import wang.sunnly.micro.services.scannable.security.auth.client.server.interceptor.FeignOkHttpClientInterceptor;
-import wang.sunnly.micro.services.scannable.security.auth.core.interceptor.ClientAuthInterceptorAdapter;
 import wang.sunnly.micro.services.scannable.security.auth.core.properties.AuthCheckClientPathFilterProperties;
-import wang.sunnly.micro.services.scannable.security.auth.core.properties.AuthCheckPathFilterProperties;
 import wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthClientProperties;
 import wang.sunnly.micro.services.scannable.security.auth.core.utils.tools.ClientInfoFromTokenHelper;
 
@@ -47,7 +44,7 @@ public class SunnlyClientResConfig {
 
     @Bean
     @Order(10)
-    public ClientAuthInterceptorAdapter clientAuthInterceptorAdapter(){
+    public ClientAuthInterceptor clientAuthInterceptor(){
         return new ClientAuthInterceptor();
     }
 

@@ -3,7 +3,6 @@ package wang.sunnly.micro.services.scannable.security.auth.client.req.schedule;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import wang.sunnly.micro.services.scannable.security.auth.client.core.store.ClientTokenStore;

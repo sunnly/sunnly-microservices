@@ -42,3 +42,9 @@ sunnly:
         token-header: x-client-token
         rsa-secret: rsaClientSecret
         expire: 3600
+
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
