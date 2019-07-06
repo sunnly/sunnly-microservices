@@ -42,7 +42,7 @@ public class AuthClientController {
      * @param secret
      * @return
      */
-        @GetMapping("/myClient")
+    @GetMapping("/myClient")
     public ObjectRestResponse<List<String>> getAllowClient(@RequestParam("clientId") String clientId,@RequestParam("secret")  String secret) throws Exception {
         List<String> allowClient = authClientServices.getAllowClient(clientId, secret);
 //        ObjectRestResponse<String> a = getToken(clientId, secret);

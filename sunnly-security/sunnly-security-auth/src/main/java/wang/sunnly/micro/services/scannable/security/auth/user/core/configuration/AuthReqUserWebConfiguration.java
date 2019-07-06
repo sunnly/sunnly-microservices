@@ -20,17 +20,16 @@ public class AuthReqUserWebConfiguration implements WebMvcConfigurer {
     @Autowired
     private AuthCheckUserPathFilterProperties authCheckUserPathFilterProperties;
 
+    @Autowired
+    private UserAuthInterceptor userAuthInterceptor;
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(userAuthInterceptor())
+        registry.addInterceptor(userAuthInterceptor)
             .addPathPatterns(authCheckUserPathFilterProperties.getIntercept())
             .excludePathPatterns(authCheckUserPathFilterProperties.getExclude());
 
     }
 
-    @Bean
-    UserAuthInterceptor userAuthInterceptor(){
-        return new UserAuthInterceptor();
-    }
 
 }

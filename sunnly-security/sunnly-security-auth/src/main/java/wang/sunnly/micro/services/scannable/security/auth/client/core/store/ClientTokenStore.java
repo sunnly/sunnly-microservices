@@ -3,6 +3,8 @@ package wang.sunnly.micro.services.scannable.security.auth.client.core.store;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -20,9 +22,10 @@ import java.util.List;
  * @create 2019/6/22 0022 1:28
  */
 //@Component
-@Slf4j
+//@Slf4j
 public class ClientTokenStore {
 
+    Logger log = LoggerFactory.getLogger(getClass());
     @Autowired
     private SecurityAuthClientProperties securityOAuthClientProperties;
 

@@ -5,7 +5,7 @@
         <groupId>wang.sunnly</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <artifactId>sunnly-modules-demo-producer</artifactId>
+    <artifactId>sunnly-modules-demo-auth</artifactId>
     <dependencies>
 
         <dependency>
@@ -22,42 +22,37 @@
         <dependency>
             <groupId>wang.sunnly</groupId>
             <artifactId>sunnly-tools-mysql</artifactId>
-            <version>${project.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
-        <!--Swagger2-->
         <dependency>
             <groupId>wang.sunnly</groupId>
             <artifactId>sunnly-tools-swagger</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
-        <!--先测试请求加入header-->
-       <!-- <dependency>
-            <groupId>wang.sunnly</groupId>
-            <artifactId>sunnly-security-auth-reqs</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>wang.sunnly</groupId>
-            <artifactId>sunnly-security-auth-reqs</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>-->
+            <artifactId>sunnly-tools-redis</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>wang.sunnly</groupId>
             <artifactId>sunnly-security-auth</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
 
+
     </dependencies>
     <build>
-        <finalName>sunnly-modules-demo-producer</finalName>
+        <finalName>sunnly-modules-test-auth</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>wang.sunnly.micro.services.scannable.DemoProducerApplication</mainClass>
+                    <mainClass>wang.sunnly.micro.services.scannable.DemoAuthApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

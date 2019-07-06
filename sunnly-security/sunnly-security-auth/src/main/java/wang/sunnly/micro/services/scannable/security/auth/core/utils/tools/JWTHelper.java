@@ -6,7 +6,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.joda.time.DateTime;
 import wang.sunnly.micro.services.scannable.security.auth.core.utils.IJWTInfo;
-import wang.sunnly.micro.services.scannable.security.auth.core.utils.user.UserInfo;
+import wang.sunnly.micro.services.scannable.security.auth.core.utils.user.JwtInfo;
 
 import java.util.Objects;
 
@@ -93,7 +93,7 @@ public class JWTHelper {
         Jws<Claims> claimsJws = parserToken(token, pubKeyPath);
         Claims body = claimsJws.getBody();
 
-        return new UserInfo(body.getSubject(), Objects.toString(body.get(JWTHelper.JWT_KEY_USER_ID),""), Objects.toString(body.get(JWTHelper.JWT_KEY_NAME),""));
+        return new JwtInfo(body.getSubject(), Objects.toString(body.get(JWTHelper.JWT_KEY_USER_ID),""), Objects.toString(body.get(JWTHelper.JWT_KEY_NAME),""));
     }
     /**
      * 获取token中的用户信息
@@ -106,6 +106,6 @@ public class JWTHelper {
     public static IJWTInfo getInfoFromToken(String token, byte[] pubKey) throws Exception {
         Jws<Claims> claimsJws = parserToken(token, pubKey);
         Claims body = claimsJws.getBody();
-        return new UserInfo(body.getSubject(), Objects.toString(body.get(JWTHelper.JWT_KEY_USER_ID),""), Objects.toString(body.get(JWTHelper.JWT_KEY_NAME),""));
+        return new JwtInfo(body.getSubject(), Objects.toString(body.get(JWTHelper.JWT_KEY_USER_ID),""), Objects.toString(body.get(JWTHelper.JWT_KEY_NAME),""));
     }
 }

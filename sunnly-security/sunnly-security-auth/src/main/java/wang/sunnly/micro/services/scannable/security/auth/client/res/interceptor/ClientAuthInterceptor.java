@@ -2,6 +2,8 @@ package wang.sunnly.micro.services.scannable.security.auth.client.res.intercepto
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.core.annotation.Order;
 import org.springframework.web.method.HandlerMethod;
 import wang.sunnly.micro.services.scannable.common.core.exception.SecurityInvalidException;
 import wang.sunnly.micro.services.scannable.common.core.status.SecurityInvalidStatus;
@@ -22,6 +24,8 @@ import javax.servlet.http.HttpServletResponse;
  * @ClassName ServiceAuthRestInterceptor
  * @Date 2019/6/12 0012 20:15
  **/
+@Lazy
+@Order(10)
 public class ClientAuthInterceptor extends ClientAuthInterceptorAdapter {
 
     @Autowired
@@ -31,6 +35,8 @@ public class ClientAuthInterceptor extends ClientAuthInterceptorAdapter {
     private ClientInfoFromTokenHelper clientInfoFromTokenHelper;
 
     @Autowired
+    @Lazy
+    @Order(10)
     private SecurityAuthClientProperties securityAuthClientProperties;
 
     @Override

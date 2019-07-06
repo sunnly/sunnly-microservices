@@ -50,8 +50,8 @@ public class FeignOkHttpClientInterceptor implements Interceptor {
                 clientTokenStore.refreshClientToken();
                 request = chain.request()
                         .newBuilder()
-                        .header(securityAuthClientProperties.getTokenHeader(),
-                                clientTokenStore.getClientToken())
+//                        .header(securityAuthClientProperties.getTokenHeader(),
+//                                clientTokenStore.getClientToken())
 
                         .build();
                 response = chain.proceed(request);

@@ -15,6 +15,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableSwagger2
+
 @EnableFeignClients(basePackages = {"wang.sunnly.micro.services.scannable"})
 @MapperScan("wang.sunnly.micro.services.scannable.demo.consumer.mapper")
 public class DemoConsumerApplication {

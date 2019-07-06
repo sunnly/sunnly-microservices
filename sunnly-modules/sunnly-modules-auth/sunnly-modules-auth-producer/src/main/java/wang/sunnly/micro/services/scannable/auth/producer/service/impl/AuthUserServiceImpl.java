@@ -11,7 +11,7 @@ import wang.sunnly.micro.services.scannable.common.core.entity.JWTAuthentication
 import wang.sunnly.micro.services.scannable.common.core.entity.UserInfo;
 import wang.sunnly.micro.services.scannable.common.core.exception.SecurityInvalidException;
 import wang.sunnly.micro.services.scannable.common.core.status.SecurityInvalidStatus;
-import wang.sunnly.micro.services.scannable.security.auth.core.utils.jwt.JWTInfo;
+import wang.sunnly.micro.services.scannable.security.auth.core.utils.user.JwtInfo;
 
 import java.util.Map;
 
@@ -38,7 +38,7 @@ public class AuthUserServiceImpl implements AuthUserService {
         UserInfo validate = authUserFeign.validate(map);
         if (StringUtils.isNotEmpty(validate.getId())){
             //获取token
-            return jwtTokenUtils.generateToken(new JWTInfo(validate.getUsername(),validate.getId(),validate.getName()));
+            return jwtTokenUtils.generateToken(new JwtInfo(validate.getUsername(),validate.getId(),validate.getName()));
         }
         throw new SecurityInvalidException(SecurityInvalidStatus.USER_PASS_INVALID_CODE);
     }
