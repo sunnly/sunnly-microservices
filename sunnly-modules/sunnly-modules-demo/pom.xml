@@ -18,5 +18,6 @@
         <module>sunnly-modules-demo-producer</module>
         <module>sunnly-modules-demo-consumer</module>
         <module>sunnly-modules-demo-auth</module>
+        <module>sunnly-modules-demo-cache</module>
     </modules>
 </project>

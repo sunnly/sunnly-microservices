@@ -24,5 +24,6 @@
         <module>sunnly-tools-fastdfs</module>
         <module>sunnly-tools-zookeeper</module>
         <module>sunnly-tools-stream</module>
+        <module>sunnly-tools-cache</module>
     </modules>
 </project>
