@@ -12,17 +12,14 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.cloud.openfeign.FeignAutoConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.core.annotation.Order;
 import wang.sunnly.micro.services.scannable.security.auth.client.server.interceptor.FeignOkHttpClientInterceptor;
 import wang.sunnly.micro.services.scannable.security.auth.user.reqs.interceptor.FeignOkHttpUserInterceptor;
-
 import java.util.concurrent.TimeUnit;
 
 /**
  *
- * FeignOkHttpClientConfig
+ * FeignOkHttpConfig
  * @author Sunnly
  * @create 2019/6/21 16:05
  */

@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Component;
 import wang.sunnly.micro.services.scannable.common.web.msg.BaseResponse;
 import wang.sunnly.micro.services.scannable.common.web.msg.ObjectRestResponse;
 import wang.sunnly.micro.services.scannable.security.auth.core.feign.SecurityAuthClientFeign;
@@ -12,12 +11,11 @@ import wang.sunnly.micro.services.scannable.security.auth.core.properties.Securi
 import wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthUserProperties;
 
 /**
- * RefreshPubKey
+ * RefreshUserPubKey
  *
  * @author Sunnly
  * @create 2019/6/22 0022 2:41
  */
-//@Component
 public class RefreshUserPubKey {
     Logger logger = LoggerFactory.getLogger(getClass());
 

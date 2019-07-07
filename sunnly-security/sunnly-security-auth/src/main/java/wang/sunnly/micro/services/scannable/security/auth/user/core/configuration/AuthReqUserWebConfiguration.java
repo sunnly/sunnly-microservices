@@ -2,17 +2,15 @@ package wang.sunnly.micro.services.scannable.security.auth.user.core.configurati
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import wang.sunnly.micro.services.scannable.security.auth.core.properties.AuthCheckUserPathFilterProperties;
 import wang.sunnly.micro.services.scannable.security.auth.user.core.interceptor.UserAuthInterceptor;
 
 /**
+ * AuthReqUserWebConfiguration
  * @author Sunnly
- * @ClassName WebConfiguration
- * @Date 2019/6/16 0016 21:26
+ * @create 2019/6/16 0016 21:26
  **/
 @Configurable
 public class AuthReqUserWebConfiguration implements WebMvcConfigurer {

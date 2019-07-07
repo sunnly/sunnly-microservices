@@ -17,11 +17,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * UserAuthInterceptor
  * 用户鉴权拦截器
  * @author Sunnly
- * @ClassName UserAuthRestInterceptor
- * @Date 2019/6/12 0012 20:15
+ * @create 2019/6/12 0012 20:15
  **/
 public class UserAuthInterceptor extends HandlerInterceptorAdapter {
 

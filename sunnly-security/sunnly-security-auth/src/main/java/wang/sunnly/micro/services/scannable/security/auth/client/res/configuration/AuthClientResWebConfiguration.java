@@ -2,19 +2,17 @@ package wang.sunnly.micro.services.scannable.security.auth.client.res.configurat
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import wang.sunnly.micro.services.scannable.security.auth.client.res.interceptor.ClientAuthInterceptor;
 import wang.sunnly.micro.services.scannable.security.auth.core.interceptor.ClientAuthInterceptorAdapter;
 import wang.sunnly.micro.services.scannable.security.auth.core.properties.AuthCheckClientPathFilterProperties;
 
 /**
+ * AuthClientResWebConfiguration
+ *
  * @author Sunnly
- * @ClassName WebConfiguration
- * @Date 2019/6/16 0016 21:26
+ * @create 2019/6/16 0016 21:26
  **/
 @Configurable
 @Order(10)

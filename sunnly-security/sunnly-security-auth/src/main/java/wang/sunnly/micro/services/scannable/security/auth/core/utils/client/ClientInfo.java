@@ -3,9 +3,9 @@ package wang.sunnly.micro.services.scannable.security.auth.core.utils.client;
 import wang.sunnly.micro.services.scannable.security.auth.core.utils.IJWTInfo;
 
 /**
+ * ClientInfo
  * @author Sunnly
- * @ClassName ClientInfo
- * @Date 2019/6/14 0014 0:01
+ * @create 2019/6/14 0014 0:01
  **/
 public class ClientInfo implements IJWTInfo {
 

@@ -15,7 +15,7 @@ import wang.sunnly.micro.services.scannable.security.auth.user.core.interceptor.
 import wang.sunnly.micro.services.scannable.security.auth.user.reqs.interceptor.FeignOkHttpUserInterceptor;
 
 /**
- * SunnlyClientResConfig
+ * SunnlyUserConfig
  *
  * @author Sunnly
  * @create 2019/7/6 15:00

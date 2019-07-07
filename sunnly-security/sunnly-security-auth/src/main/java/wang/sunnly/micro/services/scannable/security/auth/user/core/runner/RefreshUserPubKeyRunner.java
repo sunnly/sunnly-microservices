@@ -6,19 +6,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import wang.sunnly.micro.services.scannable.common.core.exception.BaseRuntimeException;
 import wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthClientProperties;
 import wang.sunnly.micro.services.scannable.security.auth.user.core.schedule.RefreshUserPubKeySchedule;
 
 /**
- * @author Sunnly
  * RefreshUserPubKeyRunner
+ * @author Sunnly
  * @created 2019/6/16 0016 23:27
  **/
 @Configurable
-//@Slf4j
 @EnableScheduling
 public class RefreshUserPubKeyRunner implements CommandLineRunner {
     Logger log = LoggerFactory.getLogger(getClass());

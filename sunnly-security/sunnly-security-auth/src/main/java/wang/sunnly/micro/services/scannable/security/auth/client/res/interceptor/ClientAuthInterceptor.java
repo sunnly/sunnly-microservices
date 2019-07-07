@@ -18,11 +18,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ *ClientAuthInterceptor
  * 服务鉴权拦截器
  * @author Sunnly
- * @ClassName ServiceAuthRestInterceptor
- * @Date 2019/6/12 0012 20:15
+ * @create 2019/6/12 0012 20:15
  **/
 @Lazy
 @Order(10)

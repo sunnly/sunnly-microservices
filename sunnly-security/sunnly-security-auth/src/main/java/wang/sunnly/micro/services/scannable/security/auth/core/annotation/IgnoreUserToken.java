@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- *
+ * IgnoreUserToken
  * 忽略用户鉴权
  * @author Sunnly
  * @Date 2019/6/12 20:15

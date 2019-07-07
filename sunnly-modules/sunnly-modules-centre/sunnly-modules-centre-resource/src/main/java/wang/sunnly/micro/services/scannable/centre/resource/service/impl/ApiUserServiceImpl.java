@@ -1,11 +1,9 @@
 package wang.sunnly.micro.services.scannable.centre.resource.service.impl;
 
 import com.google.common.collect.Lists;
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import wang.sunnly.micro.services.scannable.centre.resource.entity.TbPermission;

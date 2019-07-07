@@ -1,0 +1,101 @@
+{"groups": [
+  {
+    "name": "sunnly.security.auth.client",
+    "type": "wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthClientProperties",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthClientProperties"
+  },{
+    "name": "sunnly.security.auth.user",
+    "type": "wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthUserProperties",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthUserProperties"
+  },{
+    "name": "sunnly.path-patterns.client",
+    "type": "wang.sunnly.micro.services.scannable.security.auth.core.properties.AuthCheckClientPathFilterProperties",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.core.properties.AuthCheckClientPathFilterProperties"
+  },{
+    "name": "sunnly.path-patterns.user",
+    "type": "wang.sunnly.micro.services.scannable.security.auth.core.properties.AuthCheckUserPathFilterProperties",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.core.properties.AuthCheckUserPathFilterProperties"
+  }
+],"properties": [
+  {
+    "name": "sunnly.security.auth.service-id",
+    "type": "java.lang.String",
+    "description": "鉴权服务器ID"
+  },
+
+  {
+    "name": "sunnly.security.auth.client.id",
+    "type": "java.lang.String",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthClientProperties",
+    "description": "项目微服务ID"
+  },{
+    "name": "sunnly.security.auth.client.secret",
+    "type": "java.lang.String",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthClientProperties",
+    "description": "项目微服务Secret"
+  },{
+    "name": "sunnly.security.auth.client.tokenHeader",
+    "type": "java.lang.String",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthClientProperties",
+    "description": "微服务Header请求头封装key"
+  },
+
+  {
+    "name": "sunnly.security.auth.user.tokenHeader",
+    "type": "java.lang.String",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthUserProperties",
+    "description": "微服务Header请求头封装key"
+  },
+
+  {
+    "name": "sunnly.path-patterns.client.intercept",
+    "type": "java.util.List<java.lang.String>",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.core.properties.AuthCheckClientPathFilterProperties",
+    "description": "微服务拦截路径"
+  },{
+    "name": "sunnly.path-patterns.client.exclude",
+    "type": "java.util.List<java.lang.String>",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.core.properties.AuthCheckClientPathFilterProperties",
+    "description": "微服务放行路径"
+  },
+
+  {
+    "name": "sunnly.path-patterns.user.intercept",
+    "type": "java.util.List<java.lang.String>",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.core.properties.AuthCheckUserPathFilterProperties",
+    "description": "用户拦截路径"
+  },{
+    "name": "sunnly.path-patterns.user.exclude",
+    "type": "java.util.List<java.lang.String>",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.core.properties.AuthCheckUserPathFilterProperties",
+    "description": "用户放行路径"
+  },
+
+  {
+    "name": "sunnly.schedule.refresh-client-token",
+    "type": "java.lang.String",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.client.req.schedule.SecurityAuthClientSchedule",
+    "defaultValue": "'*/20 * * * * ?'",
+    "description": "刷新微服务Token定时器配置"
+  },{
+    "name": "sunnly.schedule.refresh-client-pubkey",
+    "type": "java.lang.String",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.client.res.schedule.RefreshClientPubKeySchedule",
+    "defaultValue": "*/10 * * * * ?",
+    "description": "刷新微服务PubKey定时器配置"
+  },{
+    "name": "sunnly.schedule.refresh-user-pubkey",
+    "type": "java.lang.String",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.user.core.schedule.RefreshUserPubKeySchedule",
+    "defaultValue": "*/10 * * * * ?",
+    "description": "刷新用户PunKey定时器配置"
+  },{
+    "name": "sunnly.schedule.refresh-allowed-client",
+    "type": "java.lang.String",
+    "sourceType": "wang.sunnly.micro.services.scannable.security.auth.client.reqs.schedule.RefreshAllowedClientSchedule",
+    "defaultValue": "*/5 * * * * ?",
+    "description": "刷新用户Token定时器配置"
+  }
+],"hints": [
+
+]}

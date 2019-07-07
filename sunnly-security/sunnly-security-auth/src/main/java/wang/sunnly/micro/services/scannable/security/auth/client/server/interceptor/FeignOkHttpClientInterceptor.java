@@ -6,7 +6,6 @@ import okhttp3.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Component;
 import wang.sunnly.micro.services.scannable.common.core.status.SecurityInvalidStatus;
 import wang.sunnly.micro.services.scannable.security.auth.client.core.store.ClientTokenStore;
 import wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthClientProperties;
@@ -14,15 +13,12 @@ import wang.sunnly.micro.services.scannable.security.auth.core.properties.Securi
 import java.io.IOException;
 
 /**
- *
+ * FeignOkHttpClientInterceptor
  * 拦截Feign请求，在header中加入token，
  * 服务器端才可以获取到用户鉴权和服务鉴权
  * @author Sunnly
- * @ClassName FeignHttpInterceptor
- * @Date 2019/6/17 16:51
- * @Version 1.0
+ * @create 2019/6/17 16:51
  */
-//@Component
 public class FeignOkHttpClientInterceptor implements Interceptor {
 
     @Autowired

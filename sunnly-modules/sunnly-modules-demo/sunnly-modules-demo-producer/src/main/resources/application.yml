@@ -33,7 +33,6 @@ sunnly:
     refresh-client-pubkey: "* */40 * * * ?"
     refresh-user-pubkey: "* */50 * * * ?"
     refresh-allowed-client: "* */45 * * * ?"
-
   security:
     auth:
       service-id: sunnly-auth

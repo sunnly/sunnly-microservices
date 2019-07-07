@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 import wang.sunnly.micro.services.scannable.centre.resource.entity.TbPermission;
 import wang.sunnly.micro.services.scannable.centre.resource.mapper.TbPermissionMapper;
 import wang.sunnly.micro.services.scannable.centre.resource.service.TbPermissionService;
-import wang.sunnly.micro.services.scannable.common.core.entity.PermissionInfo;
 import wang.sunnly.micro.services.scannable.tools.mysql.service.BaseService;
 import wang.sunnly.micro.services.scannable.tools.mysql.service.impl.BaseServiceImpl;
 

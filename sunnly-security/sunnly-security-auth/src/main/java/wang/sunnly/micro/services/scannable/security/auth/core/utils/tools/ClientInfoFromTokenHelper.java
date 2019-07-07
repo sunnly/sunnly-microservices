@@ -2,7 +2,6 @@ package wang.sunnly.micro.services.scannable.security.auth.core.utils.tools;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import wang.sunnly.micro.services.scannable.common.core.exception.SecurityInvalidException;
 import wang.sunnly.micro.services.scannable.common.core.status.SecurityInvalidStatus;
 import wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthClientProperties;
@@ -10,7 +9,6 @@ import wang.sunnly.micro.services.scannable.security.auth.core.utils.IJWTInfo;
 
 import java.security.SignatureException;
 
-//@Component
 public class ClientInfoFromTokenHelper {
 
     @Autowired

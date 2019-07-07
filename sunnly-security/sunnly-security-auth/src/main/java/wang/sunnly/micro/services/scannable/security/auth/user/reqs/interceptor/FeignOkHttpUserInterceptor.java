@@ -5,20 +5,19 @@ import okhttp3.Request;
 import okhttp3.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Component;
 import wang.sunnly.micro.services.scannable.common.core.handler.BaseThreadLocalHandler;
 import wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthUserProperties;
 
 import java.io.IOException;
 
 /**
+ * FeignOkHttpUserInterceptor
  * 拦截Feign请求，在header中加入token，
  * 服务器端才可以获取到用户鉴权和服务鉴权
  * FeignOkHttpUserInterceptor
  * @author Sunnly
  * @create 2019/6/21 16:29
  */
-//@Component
 public class FeignOkHttpUserInterceptor implements Interceptor {
 
     @Autowired

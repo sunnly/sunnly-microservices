@@ -20,19 +20,15 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 30000
       connection-test-query: SELECT 1
-
-
 sunnly:
   feign:
     clients:
       auth: sunnly-auth
-
   security:
     auth:
       service-id: sunnly-auth
       user:
         token-header: Authorization
-
       client:
         id: sunnly-admin
         secret: sunnly

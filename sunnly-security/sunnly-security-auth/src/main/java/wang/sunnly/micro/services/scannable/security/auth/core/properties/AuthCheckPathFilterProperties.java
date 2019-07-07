@@ -1,6 +1,8 @@
 package wang.sunnly.micro.services.scannable.security.auth.core.properties;
 
 import com.google.common.collect.Lists;
+import org.springframework.boot.context.properties.NestedConfigurationProperty;
+
 import java.util.List;
 
 /**
@@ -10,7 +12,11 @@ import java.util.List;
  * @create 2019/6/21 11:21
  */
 public class AuthCheckPathFilterProperties {
+
+    @NestedConfigurationProperty
     private List<String> intercept = Lists.newArrayList();
+
+    @NestedConfigurationProperty
     private List<String> exclude = Lists.newArrayList();
 
     public List<String> getIntercept() {

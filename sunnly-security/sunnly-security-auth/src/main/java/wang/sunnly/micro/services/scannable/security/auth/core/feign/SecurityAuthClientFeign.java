@@ -1,8 +1,6 @@
 package wang.sunnly.micro.services.scannable.security.auth.core.feign;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,8 +14,7 @@ import java.util.List;
  * @author Sunnly
  * @create 2019/6/21 16:26
  */
-//@FeignClient(value = "${sunnly.security.auth.service-id:sunnly-auth}")
-@FeignClient(value = "sunnly-auth",configuration = {})
+@FeignClient(value = "${sunnly.security.auth.service-id:sunnly-auth}")
 public interface SecurityAuthClientFeign {
     @PostMapping("/client/token")
     ObjectRestResponse<String> getAccessToken(@RequestParam("clientId") String clientId,

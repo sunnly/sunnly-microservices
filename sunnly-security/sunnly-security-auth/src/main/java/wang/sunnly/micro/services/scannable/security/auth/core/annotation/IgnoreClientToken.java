@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- *
+ * IgnoreClientToken
  * 忽略服务鉴权
  * @author Sunnly
  * @Date 2019/6/12 20:15

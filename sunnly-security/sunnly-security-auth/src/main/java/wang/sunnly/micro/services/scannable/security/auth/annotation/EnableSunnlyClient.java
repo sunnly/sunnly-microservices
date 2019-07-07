@@ -1,8 +1,5 @@
 package wang.sunnly.micro.services.scannable.security.auth.annotation;
 
-import org.springframework.context.annotation.Import;
-import wang.sunnly.micro.services.scannable.security.auth.config.SunnlyClientConfig;
-
 import java.lang.annotation.*;
 
 /**
@@ -14,7 +11,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Documented
-@Import({SunnlyClientConfig.class})
 @EnableSunnlyClientReq
 @EnableSunnlyClientRes
 public @interface EnableSunnlyClient {
