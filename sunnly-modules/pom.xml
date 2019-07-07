@@ -22,8 +22,7 @@
         </dependency>
     </dependencies>
     <modules>
-        <module>sunnly-modules-auth</module>
-        <module>sunnly-modules-admin</module>
+        <module>sunnly-modules-centre</module>
         <module>sunnly-modules-demo</module>
     </modules>
 </project>

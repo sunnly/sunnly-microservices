@@ -25,19 +25,30 @@ spring:
     max-active: 20
 
 sunnly:
+#  path-patterns:
+#    client:
+#      intercept:
+#        - /aaa
+#        - /bbb
+#      exclude:
+#        - /sss*
+#        - /ddd/**
   feign:
     clients:
       admin: sunnly-admin
-
   security:
     auth:
       user:
         token-header: Authorization
         rsa-secret: rasUserSecret
-
       client:
         id: sunnly-auth
         secret: sunnly
         token-header: x-client-token
         rsa-secret: rsaClientSecret
         expire: 3600
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true

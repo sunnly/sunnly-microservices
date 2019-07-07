@@ -1,9 +1,8 @@
 package wang.sunnly.micro.services.scannable.security.auth.core.properties;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 /**
  * SecurityOAuthClientProperties
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @author Sunnly
  * @create 2019/6/20 13:42
  */
-//@Component
+@EnableConfigurationProperties({SecurityAuthClientProperties.class})
 @ConfigurationProperties(prefix = "sunnly.security.auth.client")
 @Data
 public class SecurityAuthClientProperties {
@@ -23,6 +22,4 @@ public class SecurityAuthClientProperties {
     //保存微服务pubKey
     private byte[] pubKeyByte;
 
-    @Value("${spring.application.name}")
-    private String applicationName;
 }

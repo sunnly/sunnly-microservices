@@ -1,12 +1,11 @@
 package wang.sunnly.micro.services.scannable.security.auth.core.properties;
 
 import com.google.common.collect.Lists;
-
 import java.util.List;
 
 /**
- * AuthReqPathFilterProperties
- *
+ * AuthCheckPathFilterProperties
+ * 配置拦截和放行的路径
  * @author Sunnly
  * @create 2019/6/21 11:21
  */
