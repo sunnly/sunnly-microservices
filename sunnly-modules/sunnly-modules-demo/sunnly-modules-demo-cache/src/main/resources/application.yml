@@ -11,7 +11,23 @@ spring:
 sunnly:
   cache:
     redis:
-      expire: 3
+      expire: 100
+      db-index: 8
+      host: ${REDIS_HOST:redis.sunnly.wang}
+      port: ${REDIS_PORT:6379}
+#      clusters:
+#        cluster-enabled: true
+#        max-redirects: 2
+#        pool:
+#          max-total: 5
+#          max-wait-millis: 3333
+#          min-idle: 99999
+#        cluster:
+#          - host: ${REDIS_HOST:redis.sunnly.wang}
+#            port: ${REDIS_PORT:6379}
+#          - host: ${REDIS_HOST:redis.sunnly.wang666}
+#            port: ${REDIS_PORT:6377}
+
     ehcache:
       path: ehcache.xml
     simple:

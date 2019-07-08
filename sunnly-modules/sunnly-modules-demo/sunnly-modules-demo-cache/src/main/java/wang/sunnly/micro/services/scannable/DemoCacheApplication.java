@@ -2,7 +2,6 @@ package wang.sunnly.micro.services.scannable;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
 import wang.sunnly.micro.services.scannable.tools.cache.annotation.EnableSunnlyCaching;
 import wang.sunnly.micro.services.scannable.tools.cache.enums.SunnlyCacheMode;
 

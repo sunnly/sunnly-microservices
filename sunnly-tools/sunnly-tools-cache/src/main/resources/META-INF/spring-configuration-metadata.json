@@ -18,6 +18,61 @@
     "type": "java.lang.Integer",
     "description": "缓存时间，单位(秒)"
   },{
+    "name": "sunnly.cache.redis.db-index",
+    "type": "java.lang.Integer",
+    "description": "Redis DB index"
+  },{
+    "name": "sunnly.cache.redis.host",
+    "type": "java.lang.String",
+    "description": "Redis域名"
+  },{
+    "name": "sunnly.cache.redis.port",
+    "type": "java.lang.Integer",
+    "description": "Redis端口"
+  },{
+    "name": "sunnly.cache.redis.password",
+    "type": "java.lang.String",
+    "description": "Redis密码"
+  },
+
+  {
+    "name": "sunnly.cache.redis.clusters.cluster-enabled",
+    "type": "java.lang.Boolean",
+    "description": "是否集群"
+  },{
+    "name": "sunnly.cache.redis.clusters.max-redirects",
+    "type": "java.lang.Integer",
+    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties",
+    "description": "Max Redirects"
+  },{
+    "name": "sunnly.cache.redis.clusters.pool",
+    "type": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties.Pool",
+    "description": "集群缓冲池"
+  },{
+    "name": "sunnly.cache.redis.clusters.pool.max-total",
+    "type": "java.lang.Integer",
+    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties",
+    "description": "max total"
+  },{
+    "name": "sunnly.cache.redis.clusters.pool.min-idle",
+    "type": "java.lang.Integer",
+    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties",
+    "description": "minIdle"
+  },{
+    "name": "sunnly.cache.redis.clusters.pool.max-wait-millis",
+    "type": "java.lang.Integer",
+    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties",
+    "description": "maxWaitMillis"
+  },{
+    "name": "sunnly.cache.redis.clusters.cluster",
+    "type": "java.util.List<wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties.Clusters.Cluster>",
+    "description": "cluster"
+  },
+
+
+
+
+  {
     "name": "sunnly.cache.ehcache.path",
     "type": "java.lang.String",
     "description": "文件名"
