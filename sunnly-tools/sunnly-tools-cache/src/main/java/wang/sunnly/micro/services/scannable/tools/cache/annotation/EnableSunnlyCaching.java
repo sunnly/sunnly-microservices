@@ -1,11 +1,12 @@
 package wang.sunnly.micro.services.scannable.tools.cache.annotation;
 
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Import;
-import org.springframework.core.Ordered;
-import wang.sunnly.micro.services.scannable.tools.cache.enums.SunnlyAdviceMode;
+import wang.sunnly.micro.services.scannable.tools.cache.enums.SunnlyCacheMode;
 import wang.sunnly.micro.services.scannable.tools.cache.selector.SunnlyCachingConfigurationSelector;
 
 import java.lang.annotation.*;
+
 
 /**
  * EnableSunnlyCaching
@@ -17,12 +18,10 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Import({SunnlyCachingConfigurationSelector.class})
 @Documented
+@EnableCaching
 @Inherited
 public @interface EnableSunnlyCaching {
 
-    boolean proxyTargetClass() default false;
+    SunnlyCacheMode cacheMode() default SunnlyCacheMode.REDIS;
 
-    SunnlyAdviceMode value() default SunnlyAdviceMode.REDIS;
-
-    int order() default Ordered.LOWEST_PRECEDENCE;
 }

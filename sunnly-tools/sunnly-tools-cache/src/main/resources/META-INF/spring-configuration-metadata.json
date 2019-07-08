@@ -1,0 +1,31 @@
+{"groups": [
+  {
+    "name": "sunnly.cache.redis",
+    "type": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties",
+    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties"
+  },{
+    "name": "sunnly.cache.ehcache",
+    "type": "wang.sunnly.micro.services.scannable.tools.cache.ehcache.properties.EhcacheProperites",
+    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.ehcache.properties.EhcacheProperites"
+  },{
+    "name": "sunnly.cache.simple",
+    "type": "wang.sunnly.micro.services.scannable.tools.cache.simple.properties.SimpleCacheProperties",
+    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.simple.properties.SimpleCacheProperties"
+  }
+],"properties": [
+  {
+    "name": "sunnly.cache.redis.expire",
+    "type": "java.lang.Integer",
+    "description": "缓存时间，单位(秒)"
+  },{
+    "name": "sunnly.cache.ehcache.path",
+    "type": "java.lang.String",
+    "description": "文件名"
+  },{
+    "name": "sunnly.cache.simple.names",
+    "type": "java.util.Set<java.lang.String>",
+    "description": "缓存key值"
+  }
+],"hints": [
+
+]}

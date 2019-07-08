@@ -4,10 +4,10 @@ import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.GenericTypeResolver;
 import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.core.type.AnnotationMetadata;
-import wang.sunnly.micro.services.scannable.tools.cache.enums.SunnlyAdviceMode;
+import wang.sunnly.micro.services.scannable.tools.cache.enums.SunnlyCacheMode;
 
 import java.lang.annotation.Annotation;
-import java.util.Map;
+import java.util.*;
 
 /**
  * SunnlyAdviceModeImportSelector
@@ -15,13 +15,12 @@ import java.util.Map;
  * @author Sunnly
  * @create 2019/7/7 0007 20:30
  */
-public abstract class SunnlyAdviceModeImportSelector<A extends Annotation> implements ImportSelector {
-
+public abstract class SunnlyCacheModeImportSelector<A extends Annotation> implements ImportSelector {
 
     @Override
     public final String[] selectImports(AnnotationMetadata importingClassMetadata) {
 
-        Class<?> annType = GenericTypeResolver.resolveTypeArgument(getClass(), SunnlyAdviceModeImportSelector.class);
+        Class<?> annType = GenericTypeResolver.resolveTypeArgument(getClass(), SunnlyCacheModeImportSelector.class);
 
         Map<String, Object> annotationAttributes = importingClassMetadata.getAnnotationAttributes(annType.getName(), false);
         AnnotationAttributes attributes;
@@ -36,13 +35,13 @@ public abstract class SunnlyAdviceModeImportSelector<A extends Annotation> imple
                     "@%s is not present on importing class '%s' as expected",
                     annType.getSimpleName(), importingClassMetadata.getClassName()));
         }
-        SunnlyAdviceMode sunnlyAdviceMode = attributes.getEnum("value");
-        String[] imports = selectImports(sunnlyAdviceMode);
+        SunnlyCacheMode sunnlyCacheMode = attributes.getEnum("cacheMode");
+        String[] imports = selectImports(sunnlyCacheMode);
         if (imports == null){
-            throw new IllegalArgumentException("Unknown AdviceMode: " + sunnlyAdviceMode);
+            throw new IllegalArgumentException("Unknown AdviceMode: " + sunnlyCacheMode);
         }
         return imports;
     }
 
-    protected abstract String[] selectImports(SunnlyAdviceMode sunnlyAdviceMode);
+    protected abstract String[] selectImports(SunnlyCacheMode cacheMode);
 }

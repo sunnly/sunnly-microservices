@@ -1,10 +1,20 @@
 server:
   port: ${random.int[20030,20031]}
 
-#spring:
-#  redis:
-#    database: 3
-#    host: ${REDIS_HOST:redis.sunnly.wang}
-#    port: ${REDIS_PORT:6379}
-#    pool:
-#    max-active: 20
+spring:
+  redis:
+    database: 6
+    host: ${REDIS_HOST:redis.sunnly.wang}
+    port: ${REDIS_PORT:6379}
+    pool:
+    max-active: 20
+sunnly:
+  cache:
+    redis:
+      expire: 3
+    ehcache:
+      path: ehcache.xml
+    simple:
+      names:
+        - aaa
+        - bbb
