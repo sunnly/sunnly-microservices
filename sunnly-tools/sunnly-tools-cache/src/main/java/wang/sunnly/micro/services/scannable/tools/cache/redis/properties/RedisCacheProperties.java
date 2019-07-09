@@ -19,11 +19,11 @@ import java.util.List;
 @Data
 public class RedisCacheProperties {
 
-    private int dbIndex;
-    private String host;
-    private int port;
+    private int database = 2;
+    private String host = "localhost";
+    private int port = 6379;
     private String password;
-    private int expire;
+    private int expire = 3600;
 
     @NestedConfigurationProperty
     private Clusters clusters = new Clusters();
@@ -40,9 +40,17 @@ public class RedisCacheProperties {
 
         @Data
         public class Pool{
-            private int maxTotal;
-            private int minIdle;
-            private int maxWaitMillis;
+            private int maxTotal = 100;
+            private int minIdle = 8;
+            private int maxIdle = 8;
+            private Long maxWaitMillis = 10000L;
+
+            private boolean lifo = true;
+            private boolean fairness = false;
+            private long minEvictableIdleTimeMillis = 1800000L;
+            private long evictorShutdownTimeoutMillis = 10000L;
+            private long softMinEvictableIdleTimeMillis = -1L;
+            private int numTestsPerEvictionRun = 3;
         }
 
     }

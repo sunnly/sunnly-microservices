@@ -9,8 +9,8 @@
     "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.ehcache.properties.EhcacheProperites"
   },{
     "name": "sunnly.cache.simple",
-    "type": "wang.sunnly.micro.services.scannable.tools.cache.simple.properties.SimpleCacheProperties",
-    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.simple.properties.SimpleCacheProperties"
+    "type": "wang.sunnly.micro.services.scannable.tools.cache.collection.properties.CollectionCacheProperties",
+    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.collection.properties.CollectionCacheProperties"
   }
 ],"properties": [
   {
@@ -18,7 +18,7 @@
     "type": "java.lang.Integer",
     "description": "缓存时间，单位(秒)"
   },{
-    "name": "sunnly.cache.redis.db-index",
+    "name": "sunnly.cache.redis.database",
     "type": "java.lang.Integer",
     "description": "Redis DB index"
   },{
@@ -36,6 +36,10 @@
   },
 
   {
+    "name": "sunnly.cache.redis.clusters.cluster",
+    "type": "java.util.List<wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties.Clusters.Cluster>",
+    "description": "cluster"
+  },{
     "name": "sunnly.cache.redis.clusters.cluster-enabled",
     "type": "java.lang.Boolean",
     "description": "是否集群"
@@ -59,16 +63,46 @@
     "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties",
     "description": "minIdle"
   },{
+    "name": "sunnly.cache.redis.clusters.pool.max-idle",
+    "type": "java.lang.Integer",
+    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties",
+    "description": "maxIdle"
+  },{
     "name": "sunnly.cache.redis.clusters.pool.max-wait-millis",
     "type": "java.lang.Integer",
     "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties",
     "description": "maxWaitMillis"
   },{
-    "name": "sunnly.cache.redis.clusters.cluster",
-    "type": "java.util.List<wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties.Clusters.Cluster>",
-    "description": "cluster"
+    "name": "sunnly.cache.redis.clusters.pool.lifo",
+    "type": "java.lang.Boolean",
+    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties",
+    "description": "lifo"
+  },{
+    "name": "sunnly.cache.redis.clusters.pool.fairness",
+    "type": "java.lang.Boolean",
+    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties",
+    "description": "fairness"
+  },{
+    "name": "sunnly.cache.redis.clusters.pool.min-evictable-idle-time-millis",
+    "type": "java.lang.Long",
+    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties",
+    "description": "minEvictableIdleTimeMillis"
+  },{
+    "name": "sunnly.cache.redis.clusters.pool.evictor-shutdown-timeout-millis",
+    "type": "java.lang.Long",
+    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties",
+    "description": "evictorShutdownTimeoutMillis"
+  },{
+    "name": "sunnly.cache.redis.clusters.pool.num-tests-per-eviction-run",
+    "type": "java.lang.Long",
+    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties",
+    "description": "numTestsPerEvictionRun"
+  },{
+    "name": "sunnly.cache.redis.clusters.pool.soft-min-evictable-idle-time-millis",
+    "type": "java.lang.Integer",
+    "sourceType": "wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties",
+    "description": "softMinEvictableIdleTimeMillis"
   },
-
 
 
 

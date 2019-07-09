@@ -38,9 +38,17 @@
     "type": "java.lang.String",
     "sourceType": "wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthClientProperties",
     "description": "微服务Header请求头封装key"
+  },{
+    "name": "sunnly.security.auth.client.expire",
+    "type": "java.lang.Integer",
+    "description": "微服务Token有效时长"
   },
 
   {
+    "name": "sunnly.security.auth.user.expire",
+    "type": "java.lang.Integer",
+    "description": "用户Token有效时长"
+  },{
     "name": "sunnly.security.auth.user.tokenHeader",
     "type": "java.lang.String",
     "sourceType": "wang.sunnly.micro.services.scannable.security.auth.core.properties.SecurityAuthUserProperties",
@@ -95,6 +103,12 @@
     "sourceType": "wang.sunnly.micro.services.scannable.security.auth.client.reqs.schedule.RefreshAllowedClientSchedule",
     "defaultValue": "*/5 * * * * ?",
     "description": "刷新用户Token定时器配置"
+  },
+
+  {
+    "name": "sunnly.feign.clients",
+    "type": "java.lang.Object",
+    "description": "feign客户端配置"
   }
 ],"hints": [
 

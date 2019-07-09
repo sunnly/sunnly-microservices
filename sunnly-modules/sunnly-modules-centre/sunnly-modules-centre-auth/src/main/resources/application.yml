@@ -21,8 +21,8 @@ spring:
     database: 3
     host: ${REDIS_HOST:redis.sunnly.wang}
     port: ${REDIS_PORT:6379}
-    pool:
     max-active: 20
+
 
 sunnly:
 #  path-patterns:
@@ -41,12 +41,16 @@ sunnly:
       user:
         token-header: Authorization
         rsa-secret: rasUserSecret
+        expire: 3600
       client:
         id: sunnly-auth
         secret: sunnly
         token-header: x-client-token
         rsa-secret: rsaClientSecret
         expire: 3600
+
+
+
 feign:
   httpclient:
     enabled: false

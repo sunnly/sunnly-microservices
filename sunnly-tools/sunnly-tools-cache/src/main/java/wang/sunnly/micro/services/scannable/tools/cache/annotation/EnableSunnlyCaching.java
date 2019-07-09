@@ -22,6 +22,6 @@ import java.lang.annotation.*;
 @Inherited
 public @interface EnableSunnlyCaching {
 
-    SunnlyCacheMode cacheMode() default SunnlyCacheMode.REDIS;
+    SunnlyCacheMode value() default SunnlyCacheMode.REDIS;
 
 }

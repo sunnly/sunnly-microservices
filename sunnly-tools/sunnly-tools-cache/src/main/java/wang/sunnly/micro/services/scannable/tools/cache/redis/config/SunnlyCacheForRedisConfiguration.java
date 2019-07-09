@@ -54,7 +54,7 @@ public class SunnlyCacheForRedisConfiguration {
         return new RedisCacheProperties();
     }
 
-    @Bean("simpleCacheManager")
+    @Bean("cacheManager")
     public CacheManager cacheManager(JedisConnectionFactory jedisConnectionFactory,
                                      RedisCacheProperties redisCacheProperties) {
 
@@ -68,7 +68,8 @@ public class SunnlyCacheForRedisConfiguration {
 
     @Bean
     public JedisConnectionFactory jedisConnectionFactory(
-            RedisCacheProperties redisCacheProperties) {
+            RedisCacheProperties redisCacheProperties,
+            JedisPoolConfig jedisPoolConfig) {
         if (redisCacheProperties.getClusters().isClusterEnabled()) {
             RedisClusterConfiguration redisClusterConfiguration = new RedisClusterConfiguration();
             redisClusterConfiguration.setMaxRedirects(redisCacheProperties.getClusters().getMaxRedirects());
@@ -80,32 +81,36 @@ public class SunnlyCacheForRedisConfiguration {
                 nodes.add(node);
             }
             redisClusterConfiguration.setClusterNodes(nodes);
-            return new JedisConnectionFactory(redisClusterConfiguration,jedisPoolConfig());
+            return new JedisConnectionFactory(redisClusterConfiguration,jedisPoolConfig);
         }else {
             RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
-            redisStandaloneConfiguration.setDatabase(redisCacheProperties.getDbIndex());
+            redisStandaloneConfiguration.setDatabase(redisCacheProperties.getDatabase());
             redisStandaloneConfiguration.setHostName(redisCacheProperties.getHost());
             redisStandaloneConfiguration.setPort(redisCacheProperties.getPort());
             if (StringUtils.isNotEmpty(redisCacheProperties.getPassword())) {
                 redisStandaloneConfiguration.setPassword(RedisPassword.of(redisCacheProperties.getPassword()));
             }
             JedisClientConfiguration clientConfiguration = JedisClientConfiguration.defaultConfiguration();
-            JedisPoolConfig jedisPoolConfig = null;
             return new JedisConnectionFactory(redisStandaloneConfiguration, clientConfiguration);
         }
     }
 
 
     @Bean
-    public JedisPoolConfig jedisPoolConfig() {
+    public JedisPoolConfig jedisPoolConfig(RedisCacheProperties redisCacheProperties) {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
-        //最大连接数
-        jedisPoolConfig.setMaxTotal(100);
-        //最小空闲连接数
-        jedisPoolConfig.setMinIdle(20);
-        //当池内没有可用的连接时，最大等待时间
-        jedisPoolConfig.setMaxWaitMillis(10000);
-        //------其他属性根据需要自行添加-------------
+        jedisPoolConfig.setMaxTotal(redisCacheProperties.getClusters().getPool().getMaxTotal());
+        jedisPoolConfig.setMinIdle(redisCacheProperties.getClusters().getPool().getMinIdle());
+        jedisPoolConfig.setMaxIdle(redisCacheProperties.getClusters().getPool().getMaxIdle());
+        jedisPoolConfig.setMaxWaitMillis(redisCacheProperties.getClusters().getPool().getMaxWaitMillis());
+
+        jedisPoolConfig.setLifo(redisCacheProperties.getClusters().getPool().isLifo());
+        jedisPoolConfig.setFairness(redisCacheProperties.getClusters().getPool().isFairness());
+        jedisPoolConfig.setMinEvictableIdleTimeMillis(redisCacheProperties.getClusters().getPool().getMinEvictableIdleTimeMillis());
+        jedisPoolConfig.setEvictorShutdownTimeoutMillis(redisCacheProperties.getClusters().getPool().getEvictorShutdownTimeoutMillis());
+        jedisPoolConfig.setSoftMinEvictableIdleTimeMillis(redisCacheProperties.getClusters().getPool().getSoftMinEvictableIdleTimeMillis());
+        jedisPoolConfig.setNumTestsPerEvictionRun(redisCacheProperties.getClusters().getPool().getNumTestsPerEvictionRun());
+
         return jedisPoolConfig;
     }
 }

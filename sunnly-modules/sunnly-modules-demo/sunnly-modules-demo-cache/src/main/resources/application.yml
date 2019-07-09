@@ -15,13 +15,15 @@ sunnly:
       db-index: 8
       host: ${REDIS_HOST:redis.sunnly.wang}
       port: ${REDIS_PORT:6379}
+
+
 #      clusters:
 #        cluster-enabled: true
 #        max-redirects: 2
 #        pool:
 #          max-total: 5
 #          max-wait-millis: 3333
-#          min-idle: 99999
+#          min-idle: 8
 #        cluster:
 #          - host: ${REDIS_HOST:redis.sunnly.wang}
 #            port: ${REDIS_PORT:6379}

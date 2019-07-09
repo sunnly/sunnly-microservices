@@ -19,5 +19,6 @@
         <module>sunnly-modules-demo-consumer</module>
         <module>sunnly-modules-demo-auth</module>
         <module>sunnly-modules-demo-cache</module>
+        <module>sunnly-modules-demo-redis</module>
     </modules>
 </project>

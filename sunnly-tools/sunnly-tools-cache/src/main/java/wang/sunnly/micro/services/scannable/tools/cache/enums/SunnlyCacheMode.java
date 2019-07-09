@@ -1,8 +1,5 @@
 package wang.sunnly.micro.services.scannable.tools.cache.enums;
 
-import lombok.Delegate;
-import org.springframework.context.annotation.AdviceMode;
-
 /**
  * SunnlyCacheMode
  *
@@ -10,8 +7,10 @@ import org.springframework.context.annotation.AdviceMode;
  * @create 2019/7/7 0007 20:02
  */
 public enum SunnlyCacheMode {
+    //不适合于分布式缓存
     @Deprecated
-    SIMPLE,
+    COLLECTION,
+    //不适合于分布式缓存
     @Deprecated
     EHCACHE,
     REDIS

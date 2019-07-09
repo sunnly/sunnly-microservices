@@ -1,13 +1,15 @@
-package wang.sunnly.micro.services.scannable.tools.cache.selector;
+package wang.sunnly.micro.services.scannable.tools.redis.selector;
 
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.GenericTypeResolver;
 import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.core.type.AnnotationMetadata;
-import wang.sunnly.micro.services.scannable.tools.cache.enums.SunnlyCacheMode;
 
 import java.lang.annotation.Annotation;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 /**
  * SunnlyAdviceModeImportSelector
@@ -15,12 +17,12 @@ import java.util.*;
  * @author Sunnly
  * @create 2019/7/7 0007 20:30
  */
-public abstract class SunnlyCacheModeImportSelector<A extends Annotation> implements ImportSelector {
+public abstract class SunnlyRedisModeImportSelector<A extends Annotation> implements ImportSelector {
 
     @Override
     public final String[] selectImports(AnnotationMetadata importingClassMetadata) {
 
-        Class<?> annType = GenericTypeResolver.resolveTypeArgument(getClass(), SunnlyCacheModeImportSelector.class);
+        Class<?> annType = GenericTypeResolver.resolveTypeArgument(getClass(), SunnlyRedisModeImportSelector.class);
 
         Map<String, Object> annotationAttributes = importingClassMetadata.getAnnotationAttributes(annType.getName(), false);
         AnnotationAttributes attributes;
@@ -35,13 +37,12 @@ public abstract class SunnlyCacheModeImportSelector<A extends Annotation> implem
                     "@%s is not present on importing class '%s' as expected",
                     annType.getSimpleName(), importingClassMetadata.getClassName()));
         }
-        SunnlyCacheMode sunnlyCacheMode = attributes.getEnum("value");
-        String[] imports = selectImports(sunnlyCacheMode);
+        String[] imports = selectImports(attributes.getNumber("value").intValue());
         if (imports == null){
-            throw new IllegalArgumentException("Unknown value: " + sunnlyCacheMode);
+            throw new IllegalArgumentException("Unknown value: ...");
         }
         return imports;
     }
 
-    protected abstract String[] selectImports(SunnlyCacheMode cacheMode);
+    protected abstract String[] selectImports(int values);
 }

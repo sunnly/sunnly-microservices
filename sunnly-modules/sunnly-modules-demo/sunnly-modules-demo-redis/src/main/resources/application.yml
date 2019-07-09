@@ -1,0 +1,18 @@
+server:
+  port: ${random.int[20040,20041]}
+
+spring:
+  redis:
+    database: 7
+    host: ${REDIS_HOST:redis.sunnly.wang}
+    port: ${REDIS_PORT:6379}
+    pool:
+    max-active: 20
+
+sunnly:
+  redis:
+    list:
+      - name: hhhh
+        database: 1
+        host: ${REDIS_HOST:redis.sunnly.wang}
+        port: ${REDIS_PORT:6379}

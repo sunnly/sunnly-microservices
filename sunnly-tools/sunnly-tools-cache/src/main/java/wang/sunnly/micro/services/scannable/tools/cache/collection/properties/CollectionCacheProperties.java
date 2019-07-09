@@ -1,9 +1,8 @@
-package wang.sunnly.micro.services.scannable.tools.cache.simple.properties;
+package wang.sunnly.micro.services.scannable.tools.cache.collection.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCacheProperties;
 
 import java.util.Set;
 
@@ -13,10 +12,10 @@ import java.util.Set;
  * @author Sunnly
  * @create 2019/7/8 16:52
  */
-@EnableConfigurationProperties(SimpleCacheProperties.class)
+@EnableConfigurationProperties(CollectionCacheProperties.class)
 @ConfigurationProperties("sunnly.cache.simple")
 @Data
-public class SimpleCacheProperties {
+public class CollectionCacheProperties {
 
     private Set<String> names;
 }
