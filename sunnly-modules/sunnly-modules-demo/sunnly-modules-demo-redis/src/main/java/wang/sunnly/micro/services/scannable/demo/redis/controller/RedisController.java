@@ -1,14 +1,14 @@
 package wang.sunnly.micro.services.scannable.demo.redis.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import wang.sunnly.micro.services.scannable.tools.redis.annotation.Reference;
 
-import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 /**
  * RedisController
@@ -23,15 +23,16 @@ public class RedisController {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    @Resource(name = "testService")
-    @Lazy
-    private RedisTemplate testService;
+    @Reference
+    private RedisTemplate oneTemplate;
+    @Reference
+    private RedisTemplate twoTemplate;
 
     @GetMapping("/{key}/{value}")
     public String save(@PathVariable("key") String key,
                        @PathVariable("value") String value){
-        redisTemplate.opsForValue().set(key, value);
-        testService.opsForValue().get(key);
+        oneTemplate.opsForValue().set(key+"_one", value,50, TimeUnit.SECONDS);
+        twoTemplate.opsForValue().set(key+"_two", value);
         return "success";
     }
 }

@@ -12,7 +12,11 @@ spring:
 sunnly:
   redis:
     list:
-      - name: hhhh
-        database: 1
+      - name: oneTemplate
+        database: 6
+        host: ${REDIS_HOST:redis.sunnly.wang}
+        port: ${REDIS_PORT:6379}
+      - name: twoTemplate
+        database: 8
         host: ${REDIS_HOST:redis.sunnly.wang}
         port: ${REDIS_PORT:6379}

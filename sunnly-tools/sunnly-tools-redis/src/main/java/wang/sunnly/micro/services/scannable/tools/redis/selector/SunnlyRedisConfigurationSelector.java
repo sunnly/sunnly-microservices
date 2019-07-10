@@ -11,19 +11,15 @@ import wang.sunnly.micro.services.scannable.tools.redis.annotation.EnableSunnlyR
 public class SunnlyRedisConfigurationSelector extends SunnlyRedisModeImportSelector<EnableSunnlyRedis> {
 
     private final String DEFAULTREDISTEMPLATE = "wang.sunnly.micro.services.scannable.tools.redis.config.RedisTemplateConfig";
-    private final String TEMPL = "wang.sunnly.micro.services.scannable.tools.redis.config.SunnlyRedisTemple%s";
+    private final String REDISTEMPLEGENERATOR = "wang.sunnly.micro.services.scannable.tools.redis.config.SunnlyRedisTempleGenerator";
 
     @Override
     protected String[] selectImports(int size) {
-        if(size ==0){
+        if(size == 0){
             //默认
             return new String[]{DEFAULTREDISTEMPLATE};
         }else{
-            String[] res = new String[size];
-            for (int i=1; i <= size; i++){
-                res[i-1] = String.format(TEMPL,i);
-            }
-            return res;
+            return new String[]{REDISTEMPLEGENERATOR};
         }
     }
 
