@@ -9,5 +9,6 @@
     <artifactId>sunnly-tools-stream</artifactId>
     <modules>
         <module>sunnly-tools-stream-kafka</module>
+        <module>sunnly-tools-stream-rabbitmq</module>
     </modules>
 </project>

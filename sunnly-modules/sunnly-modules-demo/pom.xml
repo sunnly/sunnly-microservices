@@ -20,5 +20,6 @@
         <module>sunnly-modules-demo-auth</module>
         <module>sunnly-modules-demo-cache</module>
         <module>sunnly-modules-demo-redis</module>
+        <module>sunnly-modules-demo-mq</module>
     </modules>
 </project>

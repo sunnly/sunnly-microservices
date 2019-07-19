@@ -76,7 +76,7 @@ public class UserAuthInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        //处理完成后清楚线程存储
+        //处理完成后清除线程存储
         BaseThreadLocalHandler.remove();
         super.afterCompletion(request, response, handler, ex);
     }

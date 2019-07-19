@@ -10,6 +10,9 @@ spring:
         ext-config[1]:
           data-id: ${spring.application.name}-mysql-${spring.profiles.active}.yml
           group: ${spring.cloud.nacos.config.group}
+          refresh: true
+#        shared-dataids: nacos-demo.yml
+#        refreshable-dataids: nnn-ddd.yml
       discovery:
         server-addr: nacos.sunnly.wang:8848
   application:
