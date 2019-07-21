@@ -16,7 +16,7 @@ public class SunnlyCachingConfigurationSelector extends SunnlyCacheModeImportSel
 
     private final String REDISCONFIG = "wang.sunnly.micro.services.scannable.tools.cache.redis.config.SunnlyCacheForRedisConfiguration";
     private final String EHCACHECONFIG = "wang.sunnly.micro.services.scannable.tools.cache.ehcache.config.SunnlyCacheForEhcacheConfiguration";
-    private final String COLLECTIONCONFIG = "wang.sunnly.micro.services.scannable.tools.cache.collection.config.SunnlyCacheForwang.sunnly.micro.services.scannable.tools.cache.collection.config.SunnlyCacheForCollectionConfigurationConfiguration";
+    private final String COLLECTIONCONFIG = "wang.sunnly.micro.services.scannable.tools.cache.collection.config.SunnlyCacheForCollectionConfiguration";
 
     @Override
     protected String[] selectImports(SunnlyCacheMode cacheMode) {

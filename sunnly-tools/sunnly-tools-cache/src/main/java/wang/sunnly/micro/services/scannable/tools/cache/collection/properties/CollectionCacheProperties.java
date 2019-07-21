@@ -7,13 +7,13 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import java.util.Set;
 
 /**
- * SimpleCacheProperties
+ * collectionCacheProperties
  *
  * @author Sunnly
  * @create 2019/7/8 16:52
  */
 @EnableConfigurationProperties(CollectionCacheProperties.class)
-@ConfigurationProperties("sunnly.cache.simple")
+@ConfigurationProperties("sunnly.cache.collection")
 @Data
 public class CollectionCacheProperties {
 

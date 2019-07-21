@@ -32,7 +32,7 @@ sunnly:
 
     ehcache:
       path: ehcache.xml
-    simple:
+    collection:
       names:
         - aaa
         - bbb

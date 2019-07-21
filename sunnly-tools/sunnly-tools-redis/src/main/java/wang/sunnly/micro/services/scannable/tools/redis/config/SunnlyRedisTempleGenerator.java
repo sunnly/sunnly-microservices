@@ -23,7 +23,6 @@ import wang.sunnly.micro.services.scannable.tools.redis.properties.SunnlyRedisPr
 @Configurable
 public class SunnlyRedisTempleGenerator{
 
-    static String name;
     @Bean
     public SunnlyRedisPropertiesList sunnlyRedisPropertiesList(){
         return new SunnlyRedisPropertiesList();

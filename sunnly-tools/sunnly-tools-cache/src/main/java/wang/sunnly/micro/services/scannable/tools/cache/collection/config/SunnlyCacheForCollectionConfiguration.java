@@ -6,6 +6,7 @@ import org.springframework.cache.CacheManager;
 import org.springframework.cache.concurrent.ConcurrentMapCache;
 import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.annotation.Bean;
+import org.springframework.util.Assert;
 import wang.sunnly.micro.services.scannable.tools.cache.collection.properties.CollectionCacheProperties;
 
 import java.util.ArrayList;
@@ -21,16 +22,17 @@ import java.util.List;
 public class SunnlyCacheForCollectionConfiguration {
 
     @Bean
-    public CollectionCacheProperties simpleCacheProperties(){
+    public CollectionCacheProperties collectionCacheProperties(){
         return new CollectionCacheProperties();
     }
 
     @Bean
-    public CacheManager simpleCacheManager(CollectionCacheProperties simpleCacheProperties) {
+    public CacheManager simpleCacheManager(CollectionCacheProperties collectionCacheProperties) {
         SimpleCacheManager cacheManager = new SimpleCacheManager();
         List<Cache> caches = new ArrayList<Cache>();
 
-        for (String name : simpleCacheProperties.getNames()){
+        Assert.notNull(collectionCacheProperties.getNames(), "Collection缓存需要在配置文件中配置\"sunnly.cache.redis.collection.names\"的列表");
+        for (String name : collectionCacheProperties.getNames()){
             ConcurrentMapCache cache = new ConcurrentMapCache(name);
             caches.add(cache);
         }
