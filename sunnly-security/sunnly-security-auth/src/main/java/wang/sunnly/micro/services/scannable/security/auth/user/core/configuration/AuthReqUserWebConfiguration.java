@@ -10,7 +10,7 @@ import wang.sunnly.micro.services.scannable.security.auth.user.core.interceptor.
 /**
  * AuthReqUserWebConfiguration
  * @author Sunnly
- * @create 2019/6/16 0016 21:26
+ * @since 2019/6/16 0016 21:26
  **/
 @Configurable
 public class AuthReqUserWebConfiguration implements WebMvcConfigurer {

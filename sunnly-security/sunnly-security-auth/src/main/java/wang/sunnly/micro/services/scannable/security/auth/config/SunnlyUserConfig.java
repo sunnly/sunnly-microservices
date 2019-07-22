@@ -18,7 +18,7 @@ import wang.sunnly.micro.services.scannable.security.auth.user.reqs.interceptor.
  * SunnlyUserConfig
  *
  * @author Sunnly
- * @create 2019/7/6 15:00
+ * @since 2019/7/6 15:00
  */
 public class SunnlyUserConfig {
 

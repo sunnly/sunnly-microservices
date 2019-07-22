@@ -14,7 +14,7 @@ import wang.sunnly.micro.services.scannable.security.auth.core.properties.Securi
 /**
  * RefreshClientPubKeyRunner
  * @author Sunnly
- * @create 2019/6/16 0016 23:27
+ * @since 2019/6/16 0016 23:27
  **/
 @Configurable
 @EnableScheduling

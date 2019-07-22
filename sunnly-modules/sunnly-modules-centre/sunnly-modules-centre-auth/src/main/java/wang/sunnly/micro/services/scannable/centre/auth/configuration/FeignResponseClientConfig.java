@@ -10,7 +10,7 @@ import wang.sunnly.micro.services.scannable.security.auth.core.interceptor.Clien
  * FeignResponseClientConfig
  *
  * @author Sunnly
- * @create 2019/6/22 0022 15:32
+ * @since 2019/6/22 0022 15:32
  */
 @Configuration
 public class FeignResponseClientConfig {

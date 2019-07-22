@@ -12,7 +12,7 @@ import wang.sunnly.micro.services.scannable.security.auth.annotation.EnableSunnl
  * DemoConsumerApplication
  *
  * @author Sunnly
- * @create 2019/6/24 0024 0:02
+ * @since 2019/6/24 0024 0:02
  */
 @SpringBootApplication
 @EnableDiscoveryClient

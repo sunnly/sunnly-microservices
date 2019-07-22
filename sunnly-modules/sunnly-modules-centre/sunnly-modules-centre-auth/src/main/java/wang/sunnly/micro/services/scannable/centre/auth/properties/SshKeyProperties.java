@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * 这个类专用于鉴权服务器
  * SshKeyProperties
  * @author Sunnly
- * @create 2019/6/21 12:00
+ * @since 2019/6/21 12:00
  */
 @Data
 @Configurable

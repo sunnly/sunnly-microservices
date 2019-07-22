@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
  * AuthReqClientPathFilterProperties
  *
  * @author Sunnly
- * @create 2019/6/21 11:17
+ * @since 2019/6/21 11:17
  */
 @EnableConfigurationProperties(AuthCheckUserPathFilterProperties.class)
 @ConfigurationProperties(prefix="sunnly.path-patterns.user")

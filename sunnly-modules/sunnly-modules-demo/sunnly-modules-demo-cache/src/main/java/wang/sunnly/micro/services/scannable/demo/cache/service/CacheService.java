@@ -4,7 +4,7 @@ package wang.sunnly.micro.services.scannable.demo.cache.service;
  * CacheService
  *
  * @author Sunnly
- * @create 2019/7/8 9:57
+ * @since 2019/7/8 9:57
  */
 public interface CacheService {
     String def(String username, String password);

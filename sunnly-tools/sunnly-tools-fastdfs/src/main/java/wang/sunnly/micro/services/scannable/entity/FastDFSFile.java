@@ -6,7 +6,7 @@ import lombok.Data;
  * FastDFSFile
  *
  * @author Sunnly
- * @create 2019/6/28 0028 21:48
+ * @since 2019/6/28 0028 21:48
  */
 @Data
 

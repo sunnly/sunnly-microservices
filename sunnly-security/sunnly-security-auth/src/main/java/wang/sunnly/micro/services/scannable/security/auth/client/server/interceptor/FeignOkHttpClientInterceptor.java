@@ -17,7 +17,7 @@ import java.io.IOException;
  * 拦截Feign请求，在header中加入token，
  * 服务器端才可以获取到用户鉴权和服务鉴权
  * @author Sunnly
- * @create 2019/6/17 16:51
+ * @since 2019/6/17 16:51
  */
 public class FeignOkHttpClientInterceptor implements Interceptor {
 

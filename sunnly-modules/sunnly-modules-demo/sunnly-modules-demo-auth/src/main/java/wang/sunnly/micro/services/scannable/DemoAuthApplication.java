@@ -11,7 +11,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  * AdminProducerApplication
  *
  * @author Sunnly
- * @create 2019/6/20 16:53
+ * @since 2019/6/20 16:53
  */
 @SpringBootApplication
 @EnableDiscoveryClient

@@ -8,7 +8,7 @@ import wang.sunnly.micro.services.scannable.factory.StorageFactory;
  * FastDFSConfiguration
  *
  * @author Sunnly
- * @create 2019/6/28 0028 22:42
+ * @since 2019/6/28 0028 22:42
  */
 @Configuration
 public class FastDFSConfiguration {

@@ -8,7 +8,7 @@ import wang.sunnly.micro.services.scannable.security.auth.core.properties.Securi
  * SunnlyServerConfig
  *
  * @author Sunnly
- * @create 2019/7/5 0005 23:02
+ * @since 2019/7/5 0005 23:02
  */
 public class SunnlyServerConfig {
 

@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  * UserAuthInterceptor
  * 用户鉴权拦截器
  * @author Sunnly
- * @create 2019/6/12 0012 20:15
+ * @since 2019/6/12 0012 20:15
  **/
 public class UserAuthInterceptor extends HandlerInterceptorAdapter {
 

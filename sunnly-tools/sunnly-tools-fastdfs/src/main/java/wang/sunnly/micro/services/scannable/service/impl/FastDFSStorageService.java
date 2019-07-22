@@ -17,7 +17,7 @@ import java.io.PrintWriter;
  * FastDFSStorageService
  *
  * @author Sunnly
- * @create 2019/6/28 0028 22:39
+ * @since 2019/6/28 0028 22:39
  */
 public class FastDFSStorageService implements StorageService, InitializingBean {
     private static final Logger logger = LoggerFactory.getLogger(FastDFSStorageService.class);

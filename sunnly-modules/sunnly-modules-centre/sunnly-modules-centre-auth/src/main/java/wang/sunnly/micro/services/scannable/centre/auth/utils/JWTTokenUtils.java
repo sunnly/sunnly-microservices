@@ -11,7 +11,7 @@ import wang.sunnly.micro.services.scannable.security.auth.core.utils.tools.JWTHe
  * JWTTokenUtils
  *
  * @author Sunnly
- * @create 2019/6/19 10:27
+ * @since 2019/6/19 10:27
  */
 @Component
 public class JWTTokenUtils {

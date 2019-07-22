@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  * ClientAuthInterceptor
  *
  * @author Sunnly
- * @create 2019/6/22 0022 10:08
+ * @since 2019/6/22 0022 10:08
  */
 
 public class ClientResponseTokenInterceptor extends ClientAuthInterceptorAdapter {

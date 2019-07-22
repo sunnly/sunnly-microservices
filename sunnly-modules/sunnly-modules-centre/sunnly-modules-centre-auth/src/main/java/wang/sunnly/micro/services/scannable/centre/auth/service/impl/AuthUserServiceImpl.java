@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * 用户相关token服务
  * @Author Sunnly
- * @create 2019年6月19日 11:12:23
+ * @since 2019年6月19日 11:12:23
  **/
 @Service
 public class AuthUserServiceImpl implements AuthUserService {

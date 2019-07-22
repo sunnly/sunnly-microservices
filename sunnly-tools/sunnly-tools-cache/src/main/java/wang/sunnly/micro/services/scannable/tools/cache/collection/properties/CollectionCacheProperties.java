@@ -10,7 +10,7 @@ import java.util.Set;
  * collectionCacheProperties
  *
  * @author Sunnly
- * @create 2019/7/8 16:52
+ * @since 2019/7/8 16:52
  */
 @EnableConfigurationProperties(CollectionCacheProperties.class)
 @ConfigurationProperties("sunnly.cache.collection")

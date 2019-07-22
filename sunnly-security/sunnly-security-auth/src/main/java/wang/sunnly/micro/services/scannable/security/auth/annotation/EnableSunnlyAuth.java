@@ -6,7 +6,7 @@ import java.lang.annotation.*;
  * SunnlyAuthEnable
  *
  * @author Sunnly
- * @create 2019/7/6 0006 1:33
+ * @since 2019/7/6 0006 1:33
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)

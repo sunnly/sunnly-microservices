@@ -9,7 +9,7 @@ import wang.sunnly.micro.services.scannable.source.KafkaLoggerSource;
  * RabbitMessageProcessor
  *
  * @author Sunnly
- * @create 2019/7/17 10:15
+ * @since 2019/7/17 10:15
  */
 @EnableBinding(KafkaLoggerSource.class)
 public class KafkaMessageProcessor {

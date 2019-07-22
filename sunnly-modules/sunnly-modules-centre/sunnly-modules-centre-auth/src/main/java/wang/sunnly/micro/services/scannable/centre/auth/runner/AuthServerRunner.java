@@ -18,7 +18,7 @@ import java.util.Map;
  * AuthServerRunner
  *
  * @author Sunnly
- * @create 2019/6/21 12:39
+ * @since 2019/6/21 12:39
  */
 @Configuration
 public class AuthServerRunner implements CommandLineRunner {

@@ -7,13 +7,13 @@ import org.springframework.messaging.SubscribableChannel;
  * kafkaLoggerSink
  *
  * @author Sunnly
- * @create 2019/7/17 0017 19:31
+ * @since 2019/7/17 0017 19:31
  */
 public interface KafkaLoggerSink {
 
-    public String KAFKA_LOGGER_DEBUG = "kafkaLoggerDebug";
-    public String KAFKA_LOGGER_ERROR = "kafkaLoggerError";
-    public String KAFKA_TEST_DEBUG = "kafkaTestDebug";
+    String KAFKA_LOGGER_DEBUG = "kafkaLoggerDebug";
+    String KAFKA_LOGGER_ERROR = "kafkaLoggerError";
+    String KAFKA_TEST_DEBUG = "kafkaTestDebug";
 
     @Input(KAFKA_LOGGER_DEBUG)
     SubscribableChannel kafkaLoggerDebug();

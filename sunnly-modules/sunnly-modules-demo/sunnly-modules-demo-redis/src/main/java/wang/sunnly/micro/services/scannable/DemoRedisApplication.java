@@ -9,7 +9,7 @@ import wang.sunnly.micro.services.scannable.tools.redis.annotation.EnableSunnlyR
  * DemoRedisApplication
  *
  * @author Sunnly
- * @create 2019/7/9 13:43
+ * @since 2019/7/9 13:43
  */
 @SpringBootApplication
 @EnableSunnlyRedis(1)

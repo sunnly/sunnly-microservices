@@ -9,7 +9,7 @@ import wang.sunnly.micro.services.scannable.sink.RabbitLoggerSink;
  * RabbitLoggerConsumer
  *
  * @author Sunnly
- * @create 2019/7/17 0017 19:35
+ * @since 2019/7/17 0017 19:35
  */
 @EnableBinding(RabbitLoggerSink.class)
 public class RabbitLoggerConsumer {

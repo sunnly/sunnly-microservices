@@ -13,7 +13,7 @@ import wang.sunnly.micro.services.scannable.security.auth.core.properties.Securi
  * RefreshClientPubKey
  *
  * @author Sunnly
- * @create 2019/6/22 0022 2:41
+ * @since 2019/6/22 0022 2:41
  */
 public class RefreshClientPubKey {
     Logger logger = LoggerFactory.getLogger(getClass());

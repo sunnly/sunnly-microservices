@@ -12,7 +12,7 @@ import wang.sunnly.micro.services.scannable.security.auth.annotation.EnableSunnl
  * CentreResourceApplication
  *
  * @author Sunnly
- * @create 2019/6/20 16:53
+ * @since 2019/6/20 16:53
  */
 @SpringBootApplication
 @EnableDiscoveryClient

@@ -6,7 +6,7 @@ import java.io.Serializable;
  *
  * UserInfo
  * @author Sunnly
- * @create 2019/6/20 17:41
+ * @since 2019/6/20 17:41
  */
 public class UserInfo implements Serializable {
 

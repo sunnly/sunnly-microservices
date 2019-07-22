@@ -4,7 +4,7 @@ package wang.sunnly.micro.services.scannable.service;
  * RabbitLoggerService
  *
  * @author Sunnly
- * @create 2019/7/17 12:04
+ * @since 2019/7/17 12:04
  */
 public interface KafKaLoggerService {
 

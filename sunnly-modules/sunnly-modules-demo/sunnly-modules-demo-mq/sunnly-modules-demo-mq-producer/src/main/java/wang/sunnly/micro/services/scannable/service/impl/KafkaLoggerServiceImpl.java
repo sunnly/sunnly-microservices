@@ -9,7 +9,7 @@ import wang.sunnly.micro.services.scannable.service.KafKaLoggerService;
  * RabbitLoggerServiceImpl
  *
  * @author Sunnly
- * @create 2019/7/17 12:04
+ * @since 2019/7/17 12:04
  */
 @Service
 public class KafkaLoggerServiceImpl implements KafKaLoggerService {

@@ -9,7 +9,7 @@ import java.util.List;
  * AuthCheckPathFilterProperties
  * 配置拦截和放行的路径
  * @author Sunnly
- * @create 2019/6/21 11:21
+ * @since 2019/6/21 11:21
  */
 public class AuthCheckPathFilterProperties {
 

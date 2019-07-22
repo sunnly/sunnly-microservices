@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  * 用户token获取、刷新、验证
  *
  * @Author Sunnly
- * @create 2019年6月19日 11:13:16
+ * @since 2019年6月19日 11:13:16
  **/
 @RestController
 @RequestMapping("jwt")
@@ -28,7 +28,7 @@ public class AuthUserController {
     /**
      * 获取token
      * @Author Sunnly
-     * @create 2019年6月19日 10:58:17
+     * @since 2019年6月19日 10:58:17
      **/
     @PostMapping("/token")
     public ObjectRestResponse<String> getToken(@RequestBody JWTAuthenticationUser user) throws Exception {
@@ -40,7 +40,7 @@ public class AuthUserController {
      * 刷新token
      *
      * @Author Sunnly
-     * @create 2019年6月19日 11:05:33
+     * @since 2019年6月19日 11:05:33
      **/
     @PostMapping("/refresh")
     public ObjectRestResponse<String> refreshToken(HttpServletRequest request) throws Exception {
@@ -53,7 +53,7 @@ public class AuthUserController {
      * 验证token
      *
      * @Author Sunnly
-     * @create 2019年6月19日 11:05:52
+     * @since 2019年6月19日 11:05:52
      **/
     @GetMapping("/verify")
     public boolean verify(@RequestParam("token") String token) throws Exception{

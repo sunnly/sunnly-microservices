@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
  *
  * FeignOkHttpConfig
  * @author Sunnly
- * @create 2019/6/21 16:05
+ * @since 2019/6/21 16:05
  */
 
 @AutoConfigureBefore(FeignAutoConfiguration.class)

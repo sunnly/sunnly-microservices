@@ -8,7 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * GatewayApplication
  *
  * @author Sunnly
- * @create 2019/6/20 12:03
+ * @since 2019/6/20 12:03
  */
 @SpringBootApplication
 @EnableDiscoveryClient

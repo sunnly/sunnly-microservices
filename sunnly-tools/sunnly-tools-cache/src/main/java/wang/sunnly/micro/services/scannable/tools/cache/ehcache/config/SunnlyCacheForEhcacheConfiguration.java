@@ -21,7 +21,7 @@ import java.util.Properties;
  * SunnlyCacheForEhcacheConfiguration
  *
  * @author Sunnly
- * @create 2019/7/8 14:13
+ * @since 2019/7/8 14:13
  */
 @Configurable
 public class SunnlyCacheForEhcacheConfiguration {

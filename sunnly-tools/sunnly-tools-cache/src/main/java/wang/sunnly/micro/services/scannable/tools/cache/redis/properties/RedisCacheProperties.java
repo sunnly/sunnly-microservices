@@ -12,7 +12,7 @@ import java.util.List;
  * RedisCacheProperties
  *
  * @author Sunnly
- * @create 2019/7/8 15:35
+ * @since 2019/7/8 15:35
  */
 @EnableConfigurationProperties(RedisCacheProperties.class)
 @ConfigurationProperties("sunnly.cache.redis")

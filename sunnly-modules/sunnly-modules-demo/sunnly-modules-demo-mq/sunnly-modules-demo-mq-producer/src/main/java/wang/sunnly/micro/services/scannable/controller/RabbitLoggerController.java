@@ -11,7 +11,7 @@ import wang.sunnly.micro.services.scannable.service.RabbitLoggerService;
  * LoggerController
  *
  * @author Sunnly
- * @create 2019/7/17 10:06
+ * @since 2019/7/17 10:06
  */
 @RestController
 @RequestMapping("rabbit")

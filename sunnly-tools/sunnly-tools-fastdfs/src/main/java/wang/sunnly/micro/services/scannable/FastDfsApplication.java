@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * FastDfsApplication
  *
  * @author Sunnly
- * @create 2019/6/28 0028 20:37
+ * @since 2019/6/28 0028 20:37
  */
 @SpringBootApplication
 public class FastDfsApplication {

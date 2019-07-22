@@ -8,7 +8,7 @@ import wang.sunnly.micro.services.scannable.centre.auth.interceptor.ClientReques
  *
  * FeignRequestClientConfiguration
  * @author Sunnly
- * @create 2019/6/21 10:07
+ * @since 2019/6/21 10:07
  */
 @Configurable
 public class FeignRequestClientConfiguration {

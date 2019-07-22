@@ -13,7 +13,7 @@ import java.io.IOException;
  * FeignErrorDecoder
  *
  * @author Sunnly
- * @create 2019/6/22 0022 0:19
+ * @since 2019/6/22 0022 0:19
  */
 @Configuration
 public class FeignErrorDecoder implements ErrorDecoder {

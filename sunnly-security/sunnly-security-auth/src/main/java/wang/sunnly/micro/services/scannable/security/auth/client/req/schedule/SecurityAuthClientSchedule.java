@@ -11,7 +11,7 @@ import wang.sunnly.micro.services.scannable.security.auth.client.core.store.Clie
  *
  * 由于服务鉴权管理员可能会修改，故需要定时去获取允许访问的服务
  * @author Sunnly
- * @create 2019/6/21 16:20
+ * @since 2019/6/21 16:20
  */
 
 @Configurable

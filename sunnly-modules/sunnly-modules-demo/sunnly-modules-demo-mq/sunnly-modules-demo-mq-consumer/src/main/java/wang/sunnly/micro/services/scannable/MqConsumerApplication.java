@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * MqConsumerApplication
  *
  * @author Sunnly
- * @create 2019/7/19 10:49
+ * @since 2019/7/19 10:49
  */
 @SpringBootApplication
 public class MqConsumerApplication {

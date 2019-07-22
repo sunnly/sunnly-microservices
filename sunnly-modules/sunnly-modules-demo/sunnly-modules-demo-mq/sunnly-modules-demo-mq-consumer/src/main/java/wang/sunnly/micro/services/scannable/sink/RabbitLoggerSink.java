@@ -7,13 +7,13 @@ import org.springframework.messaging.SubscribableChannel;
  * RabbitLoggerSink
  *
  * @author Sunnly
- * @create 2019/7/17 0017 19:31
+ * @since 2019/7/17 0017 19:31
  */
 public interface RabbitLoggerSink {
 
-    public String RABBIT_LOGGER_DEBUG = "rabbitLoggerDebug";
-    public String RABBIT_LOGGER_ERROR = "rabbitLoggerError";
-    public String RABBIT_TEST_DEBUG = "rabbitTestDebug";
+    String RABBIT_LOGGER_DEBUG = "rabbitLoggerDebug";
+    String RABBIT_LOGGER_ERROR = "rabbitLoggerError";
+    String RABBIT_TEST_DEBUG = "rabbitTestDebug";
 
     @Input(RABBIT_LOGGER_DEBUG)
     SubscribableChannel rabbitLoggerDebug();

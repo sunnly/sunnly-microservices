@@ -14,7 +14,7 @@ import wang.sunnly.micro.services.scannable.security.auth.core.utils.tools.Clien
  * SunnlyClientResConfig
  *
  * @author Sunnly
- * @create 2019/7/6 15:00
+ * @since 2019/7/6 15:00
  */
 public class SunnlyClientResConfig {
 

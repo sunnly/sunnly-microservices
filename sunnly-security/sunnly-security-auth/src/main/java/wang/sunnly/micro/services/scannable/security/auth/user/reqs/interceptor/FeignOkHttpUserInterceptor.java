@@ -16,7 +16,7 @@ import java.io.IOException;
  * 服务器端才可以获取到用户鉴权和服务鉴权
  * FeignOkHttpUserInterceptor
  * @author Sunnly
- * @create 2019/6/21 16:29
+ * @since 2019/6/21 16:29
  */
 public class FeignOkHttpUserInterceptor implements Interceptor {
 

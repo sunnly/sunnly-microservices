@@ -15,7 +15,7 @@ import java.security.SignatureException;
  * ClientTokenInfo
  *
  * @author Sunnly
- * @create 2019/6/22 0022 18:52
+ * @since 2019/6/22 0022 18:52
  */
 @Component
 public class ClientTokenInfo {

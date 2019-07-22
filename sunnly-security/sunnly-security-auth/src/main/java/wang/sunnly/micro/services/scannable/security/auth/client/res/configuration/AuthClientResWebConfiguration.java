@@ -12,7 +12,7 @@ import wang.sunnly.micro.services.scannable.security.auth.core.properties.AuthCh
  * AuthClientResWebConfiguration
  *
  * @author Sunnly
- * @create 2019/6/16 0016 21:26
+ * @since 2019/6/16 0016 21:26
  **/
 @Configurable
 @Order(10)

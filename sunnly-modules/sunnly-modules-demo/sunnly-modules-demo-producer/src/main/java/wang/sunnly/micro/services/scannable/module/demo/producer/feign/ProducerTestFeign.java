@@ -14,7 +14,7 @@ import java.util.List;
  * ProducerTestFeign
  *
  * @author Sunnly
- * @create 2019/6/21 14:49
+ * @since 2019/6/21 14:49
  */
 @FeignClient(value = "${sunnly.feign.clients.auth:sunnly-auth}"
 //        ,fallback = ProducerTestFeignFallback.class

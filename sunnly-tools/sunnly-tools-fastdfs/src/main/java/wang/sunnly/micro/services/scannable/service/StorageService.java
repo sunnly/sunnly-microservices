@@ -4,7 +4,7 @@ package wang.sunnly.micro.services.scannable.service;
  * StorageService
  *
  * @author Sunnly
- * @create 2019/6/28 0028 22:39
+ * @since 2019/6/28 0028 22:39
  */
 public interface StorageService {
     /**

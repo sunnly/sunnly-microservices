@@ -15,7 +15,7 @@ import java.io.IOException;
  * FastDFSClient
  *
  * @author Sunnly
- * @create 2019/6/28 0028 22:24
+ * @since 2019/6/28 0028 22:24
  */
 public class FastDFSClient {
 

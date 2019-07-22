@@ -7,13 +7,13 @@ import org.springframework.messaging.MessageChannel;
  * kafkaLoggerSource
  *
  * @author Sunnly
- * @create 2019/7/17 10:09
+ * @since 2019/7/17 10:09
  */
 public interface KafkaLoggerSource {
 
-    public String KAFKA_LOGGER_DEBUG = "kafkaLoggerDebug";
-    public String KAFKA_LOGGER_ERROR = "kafkaLoggerError";
-    public String KAFKA_TEST_DEBUG = "kafkaTestDebug";
+    String KAFKA_LOGGER_DEBUG = "kafkaLoggerDebug";
+    String KAFKA_LOGGER_ERROR = "kafkaLoggerError";
+    String KAFKA_TEST_DEBUG = "kafkaTestDebug";
 
     @Output(KAFKA_LOGGER_DEBUG)
     MessageChannel kafkaLoggerDebug();

@@ -9,7 +9,7 @@ import wang.sunnly.micro.services.scannable.tools.cache.redis.properties.RedisCa
  * EhcacheProperites
  *
  * @author Sunnly
- * @create 2019/7/8 16:34
+ * @since 2019/7/8 16:34
  */
 @EnableConfigurationProperties(EhcacheProperites.class)
 @ConfigurationProperties("sunnly.cache.ehcache")

@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * 
  * @Author Sunnly
- * @create 2019年6月20日 14:09:20 
+ * @since 2019年6月20日 14:09:20
  **/
 public class JwtInfo implements IJWTInfo, Serializable {
 

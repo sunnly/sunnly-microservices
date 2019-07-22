@@ -10,7 +10,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
  * SecurityOAuthClientProperties
  *
  * @author Sunnly
- * @create 2019/6/20 13:42
+ * @since 2019/6/20 13:42
  */
 @EnableConfigurationProperties(SecurityAuthUserProperties.class)
 @ConfigurationProperties(prefix = "sunnly.security.auth.user")

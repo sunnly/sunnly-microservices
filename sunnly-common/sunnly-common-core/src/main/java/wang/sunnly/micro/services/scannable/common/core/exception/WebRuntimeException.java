@@ -6,7 +6,7 @@ import wang.sunnly.micro.services.scannable.common.core.status.SecurityInvalidSt
  * WebRuntimeException
  *
  * @author Sunnly
- * @create 2019/6/22 0022 16:24
+ * @since 2019/6/22 0022 16:24
  */
 public class WebRuntimeException extends BaseRuntimeException {
 

@@ -6,7 +6,7 @@ import lombok.Data;
  * SunnlyRedisProperties
  *
  * @author Sunnly
- * @create 2019/7/8 15:35
+ * @since 2019/7/8 15:35
  */
 @Data
 public class SunnlyRedisProperties {

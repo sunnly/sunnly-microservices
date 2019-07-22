@@ -17,7 +17,7 @@ import java.util.Map;
  * TestDemoProducerFeign
  *
  * @author Sunnly
- * @create 2019/6/24 0024 0:06
+ * @since 2019/6/24 0024 0:06
  */
 @FeignClient("${sunnly.feign.clients.demo:sunnly-demo}")
 public interface TestDemoProducerFeign {

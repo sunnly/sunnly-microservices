@@ -9,7 +9,7 @@ import java.lang.annotation.*;
  * EnableSunnlyRedis
  *
  * @author Sunnly
- * @create 2019/7/9 13:37
+ * @since 2019/7/9 13:37
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)

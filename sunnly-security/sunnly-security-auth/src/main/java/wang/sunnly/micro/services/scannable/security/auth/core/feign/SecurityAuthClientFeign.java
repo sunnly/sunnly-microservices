@@ -12,7 +12,7 @@ import java.util.List;
  *
  * SecurityAuthClientFeign
  * @author Sunnly
- * @create 2019/6/21 16:26
+ * @since 2019/6/21 16:26
  */
 @FeignClient(value = "${sunnly.security.auth.service-id:sunnly-auth}")
 public interface SecurityAuthClientFeign {
