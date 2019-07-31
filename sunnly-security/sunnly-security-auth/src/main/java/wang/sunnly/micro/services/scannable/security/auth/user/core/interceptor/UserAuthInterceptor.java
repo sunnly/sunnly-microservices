@@ -67,7 +67,7 @@ public class UserAuthInterceptor extends HandlerInterceptorAdapter {
         //保存到本地线程存储中    ,Feign拦截器中就可以获取这些信息了
         BaseThreadLocalHandler.setUsername(infoFromToken.getUniqueName());
         BaseThreadLocalHandler.setName(infoFromToken.getName());
-        BaseThreadLocalHandler.setUserID(infoFromToken.getId());
+        BaseThreadLocalHandler.setUserId(infoFromToken.getId());
         BaseThreadLocalHandler.setToken(token);
 
         return super.preHandle(request, response, handler);

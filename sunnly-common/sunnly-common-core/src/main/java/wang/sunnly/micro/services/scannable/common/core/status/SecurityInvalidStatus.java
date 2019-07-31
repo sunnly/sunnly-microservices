@@ -66,8 +66,9 @@ public enum SecurityInvalidStatus {
 
     public static String reasonPhrase(int code){
         for (SecurityInvalidStatus s : SecurityInvalidStatus.values()){
-            if (code == s.value)
+            if (code == s.value) {
                 return s.reasonPhrase();
+            }
         }
         return null;
     }

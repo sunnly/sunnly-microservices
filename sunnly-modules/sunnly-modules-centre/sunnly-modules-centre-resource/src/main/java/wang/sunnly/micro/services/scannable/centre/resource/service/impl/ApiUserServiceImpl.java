@@ -35,11 +35,12 @@ public class ApiUserServiceImpl implements ApiUserService {
     public UserInfo validate(String username, String password) {
         UserInfo info = new UserInfo();
         TbUser tbUser = tbUserService.getUserByUsername(username);
-        if (tbUser!=null)
-            if (encoder.matches(StringUtils.defaultIfEmpty(password,""), tbUser.getPassword())){
-                BeanUtils.copyProperties(tbUser,info);
+        if (tbUser!=null) {
+            if (encoder.matches(StringUtils.defaultIfEmpty(password, ""), tbUser.getPassword())) {
+                BeanUtils.copyProperties(tbUser, info);
                 info.setId(tbUser.getId().toString());
             }
+        }
         return info;
     }
 

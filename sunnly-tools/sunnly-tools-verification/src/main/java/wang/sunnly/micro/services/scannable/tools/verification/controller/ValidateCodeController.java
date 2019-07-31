@@ -30,7 +30,6 @@ public class ValidateCodeController {
     public void genCode(@PathVariable("type") String type,
                         @PathVariable("id") String id,
                         HttpServletRequest request, HttpServletResponse response){
-//        logger.info(String.format("【%s】:验证码为：%s",type,"3242342"));
         validateCodeService.genValidateCode(new ServletWebRequest(request,response),type, id);
     }
 

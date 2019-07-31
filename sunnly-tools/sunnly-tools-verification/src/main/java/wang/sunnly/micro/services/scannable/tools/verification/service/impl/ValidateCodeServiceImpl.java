@@ -62,6 +62,7 @@ public class ValidateCodeServiceImpl implements ValidateCodeService {
                 validateCodeStorage.save(request,key,id,code);
                 mailValidateService.sender(request,id,code);
                 break;
+            default:
         }
 
 
@@ -80,6 +81,7 @@ public class ValidateCodeServiceImpl implements ValidateCodeService {
             case "MAIL":
                 key = StringUtils.defaultIfEmpty(validateCodeProperties.getMail().getKey(),"MAIL_VALIDATE_CODE");
                 break;
+            default:
         }
         return validateCodeStorage.validate(request,key,id,code);
     }

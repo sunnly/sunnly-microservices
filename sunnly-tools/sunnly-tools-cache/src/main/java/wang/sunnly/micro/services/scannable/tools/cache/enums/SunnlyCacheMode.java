@@ -12,14 +12,14 @@ public enum SunnlyCacheMode {
     /**
      *  此模式只适用于单体，请谨慎选择
      *
-     * @see     SunnlyCacheMode#REDIS
+     * @see SunnlyCacheMode#REDIS
      */
     @Deprecated
     COLLECTION,
     /**
      *  此模式只适用于单体，请谨慎选择
      *
-     * @see     SunnlyCacheMode#REDIS
+     * @see SunnlyCacheMode#REDIS
      */
     @Deprecated
     EHCACHE,

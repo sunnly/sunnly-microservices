@@ -6,6 +6,7 @@ import wang.sunnly.micro.services.scannable.centre.resource.entity.TbUser;
 import wang.sunnly.micro.services.scannable.centre.resource.service.TbUserService;
 import wang.sunnly.micro.services.scannable.common.web.msg.BaseResponse;
 import wang.sunnly.micro.services.scannable.common.web.msg.ListRestResponse;
+import wang.sunnly.micro.services.scannable.tools.logger.annotation.SunnlyLogger;
 import wang.sunnly.micro.services.scannable.tools.mysql.controller.BaseController;
 
 import javax.validation.Valid;
@@ -26,6 +27,7 @@ public class TbUserController extends BaseController<TbUserService, TbUser> {
     @ApiOperation(value = "根据id查询用户信息", notes = "查询数据库中某个的用户信息")
     @ApiImplicitParam(name = "id", value = "用户ID", paramType = "path", required = true, dataType = "Integer")
     @RequestMapping(value = "/stu/{id}", method = RequestMethod.GET)
+    @SunnlyLogger(value = "用户日志表")
     public Object getUser(@PathVariable int id) {
         return service.selectById(id);
     }
@@ -40,6 +42,7 @@ public class TbUserController extends BaseController<TbUserService, TbUser> {
             @ApiImplicitParam(name = "created", paramType ="query", value = "创建日期"),
             @ApiImplicitParam(name = "updated", paramType ="query",  value = "修改日期")
     })
+    @Override
     @PutMapping("")
     public BaseResponse update(TbUser tbUser){
         tbUser.setCreated(new Date());

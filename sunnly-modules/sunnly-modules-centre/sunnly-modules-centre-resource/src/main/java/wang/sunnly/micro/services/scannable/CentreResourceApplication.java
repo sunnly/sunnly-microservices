@@ -7,6 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import tk.mybatis.spring.annotation.MapperScan;
 import wang.sunnly.micro.services.scannable.security.auth.annotation.EnableSunnlyAuth;
+import wang.sunnly.micro.services.scannable.tools.logger.annotation.EnableSunnlyLogger;
 
 /**
  * CentreResourceApplication
@@ -19,6 +20,7 @@ import wang.sunnly.micro.services.scannable.security.auth.annotation.EnableSunnl
 @EnableSwagger2
 @EnableFeignClients
 @EnableSunnlyAuth
+@EnableSunnlyLogger
 @MapperScan("wang.sunnly.micro.services.scannable.centre.resource.mapper")
 public class CentreResourceApplication {
     public static void main(String[] args) {

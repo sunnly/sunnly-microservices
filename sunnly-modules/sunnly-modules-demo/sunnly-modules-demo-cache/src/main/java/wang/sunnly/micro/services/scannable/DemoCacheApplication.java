@@ -14,7 +14,7 @@ import java.util.Date;
  * @since 2019/7/7 0007 19:44
  */
 @SpringBootApplication
-@EnableSunnlyCaching(SunnlyCacheMode.COLLECTION)
+@EnableSunnlyCaching(SunnlyCacheMode.REDIS)
 public class DemoCacheApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoCacheApplication.class, args);

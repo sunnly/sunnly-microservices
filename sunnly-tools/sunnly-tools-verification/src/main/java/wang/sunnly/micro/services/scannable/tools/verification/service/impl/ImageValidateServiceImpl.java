@@ -3,6 +3,7 @@ package wang.sunnly.micro.services.scannable.tools.verification.service.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.context.request.ServletWebRequest;
+import org.w3c.dom.css.RGBColor;
 import wang.sunnly.micro.services.scannable.tools.verification.service.ImageValidateService;
 
 import javax.imageio.ImageIO;

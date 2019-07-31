@@ -21,9 +21,11 @@
         <module>sunnly-tools-feign</module>
         <module>sunnly-tools-verification</module>
         <module>sunnly-tools-swagger</module>
+        <module>sunnly-tools-materials</module>
         <module>sunnly-tools-fastdfs</module>
         <module>sunnly-tools-zookeeper</module>
         <module>sunnly-tools-stream</module>
         <module>sunnly-tools-cache</module>
+        <module>sunnly-tools-logger</module>
     </modules>
 </project>

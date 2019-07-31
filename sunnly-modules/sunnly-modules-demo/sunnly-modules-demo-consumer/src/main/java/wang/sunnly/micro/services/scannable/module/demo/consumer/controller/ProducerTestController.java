@@ -29,13 +29,13 @@ public class ProducerTestController {
     private TestDemoProducerFeign testDemoProducerFeign;
 
     @GetMapping("/token")
-    public ObjectRestResponse<String> getToken(@RequestParam("clientId") String clientId, @RequestParam("secret")  String secret) throws Exception {
-        return testDemoProducerFeign.getToken(clientId,secret);
+    public ObjectRestResponse<String> getToken(@RequestParam("clientId") String clientId, @RequestParam("secret") String secret) throws Exception {
+        return testDemoProducerFeign.getToken(clientId, secret);
     }
 
     @GetMapping("/me")
-    public ObjectRestResponse<List<String>> me(@RequestParam("clientId") String clientId, @RequestParam("secret")  String secret) throws Exception {
-        return testDemoProducerFeign.me(clientId,secret);
+    public ObjectRestResponse<List<String>> me(@RequestParam("clientId") String clientId, @RequestParam("secret") String secret) throws Exception {
+        return testDemoProducerFeign.me(clientId, secret);
     }
 
 //    @GetMapping("/jt")
@@ -66,11 +66,11 @@ public class ProducerTestController {
 
     @GetMapping("/jt")
     @IgnoreUserToken
-    public UserInfo jt(@RequestParam("username") String username, @RequestParam("password")  String password) throws Exception {
+    public UserInfo jt(@RequestParam("username") String username, @RequestParam("password") String password) throws Exception {
         Map map = Maps.newHashMap();
-        map.put("username",username);
-        map.put("password",password);
-        return testDemoProducerFeign.jt(username,password);
+        map.put("username", username);
+        map.put("password", password);
+        return testDemoProducerFeign.jt(username, password);
     }
 
 }

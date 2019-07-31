@@ -33,16 +33,18 @@ public class ValidateCodeStorageImpl implements ValidateCodeStorage {
     @Override
     public boolean validate(ServletWebRequest request, String key, String id, String code,boolean clear) {
         String storeCode = (String) sessionStrategy.getAttribute(request, String.format("%s_%s", key, id));
-        if (clear)
-            sessionStrategy.setAttribute(request,String.format("%s_%s",key,id),null);
+        if (clear) {
+            sessionStrategy.setAttribute(request, String.format("%s_%s", key, id), null);
+        }
         return StringUtils.isNoneEmpty(storeCode) && StringUtils.equals(storeCode,code);
     }
 
     @Override
     public boolean validateAnyIgnoreCase(ServletWebRequest request, String key, String id, String code,boolean clear) {
         String storeCode = (String) sessionStrategy.getAttribute(request, String.format("%s_%s", key, id));
-        if (clear)
-            sessionStrategy.setAttribute(request,String.format("%s_%s",key,id),null);
+        if (clear) {
+            sessionStrategy.setAttribute(request, String.format("%s_%s", key, id), null);
+        }
         return StringUtils.isNoneEmpty(storeCode) && StringUtils.equalsAnyIgnoreCase(storeCode,code);
     }
 }

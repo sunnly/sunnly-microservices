@@ -3,16 +3,13 @@ package wang.sunnly.micro.services.scannable.tools.cache.selector;
 import wang.sunnly.micro.services.scannable.tools.cache.annotation.EnableSunnlyCaching;
 import wang.sunnly.micro.services.scannable.tools.cache.enums.SunnlyCacheMode;
 
-import java.util.List;
-import java.util.Map;
-
 /**
  * SunnlyCachingConfigurationSelector
  *
  * @author Sunnly
  * @since 2019/7/7 0007 20:19
  */
-public class SunnlyCachingConfigurationSelector extends SunnlyCacheModeImportSelector<EnableSunnlyCaching> {
+public class SunnlyCachingConfigurationSelector extends AbstractCacheModeImportSelector<EnableSunnlyCaching> {
 
     private final String REDISCONFIG = "wang.sunnly.micro.services.scannable.tools.cache.redis.config.SunnlyCacheForRedisConfiguration";
     private final String EHCACHECONFIG = "wang.sunnly.micro.services.scannable.tools.cache.ehcache.config.SunnlyCacheForEhcacheConfiguration";
@@ -27,8 +24,8 @@ public class SunnlyCachingConfigurationSelector extends SunnlyCacheModeImportSel
                 return new String[]{EHCACHECONFIG};
             case COLLECTION:
                 return new String[]{COLLECTIONCONFIG};
+            default: return new String[0];
         }
-        return new String[0];
     }
 
 }

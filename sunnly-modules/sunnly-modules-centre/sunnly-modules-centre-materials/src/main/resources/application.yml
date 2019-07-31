@@ -1,0 +1,39 @@
+server:
+  port: 16666
+
+spring:
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    mode: LEGACYHTML5
+
+  servlet:
+    multipart:
+      max-file-size: 2048MB
+      max-request-size: 2018MB
+
+sunnly:
+  servlet:
+    upload:
+      settings:
+        fileSetting:
+          name: abc
+          base-url: http://fastdfs.sunnly.wang:8888/
+          security: true
+          secret-key: abc
+        imgSettring:
+          name: img
+          base-url: http://fastdfs.sunnly.wang:8888/
+          security: true
+          secret-key: hahah
+
+  fastdfs:
+    base:
+      uri: http://fastdfs.sunnly.wang:8888/
+
+storage:
+  type: fastdfs
+  fastdfs:
+    tracker_server: fastdfs.sunnly.wang:22122

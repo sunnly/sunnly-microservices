@@ -66,7 +66,7 @@ public class TbUserExample extends MyExample{
         distinct = false;
     }
 
-    protected abstract static class GeneratedCriteria {
+    protected static class GeneratedCriteria {
         protected List<Criterion> criteria;
 
         protected GeneratedCriteria() {

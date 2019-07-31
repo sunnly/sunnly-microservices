@@ -1,0 +1,12 @@
+server:
+  port: 9999
+
+sunnly:
+  logger:
+    catalog:
+      mystream:
+        type: stream
+      myinterface:
+        type: interface
+      default:
+        type: logger

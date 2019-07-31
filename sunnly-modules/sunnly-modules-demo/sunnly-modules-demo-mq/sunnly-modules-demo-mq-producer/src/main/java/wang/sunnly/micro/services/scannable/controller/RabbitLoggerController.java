@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import wang.sunnly.micro.services.scannable.service.RabbitLoggerService;
+import wang.sunnly.micro.services.scannable.tools.fastdfs.service.RabbitLoggerService;
 
 /**
  * LoggerController

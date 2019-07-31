@@ -24,7 +24,7 @@ public class ClientTokenStore {
 
     Logger log = LoggerFactory.getLogger(getClass());
     @Autowired
-    private SecurityAuthClientProperties securityOAuthClientProperties;
+    private SecurityAuthClientProperties securityAuthClientProperties;
 
     @Autowired
     @Lazy
@@ -46,8 +46,8 @@ public class ClientTokenStore {
 
     public void refreshClientToken(){
         log.info("【ClientTokenStore：refreshClientToken】开始刷新服务端token");
-        ObjectRestResponse<String> accessToken = securityAuthClientFeign.getAccessToken(securityOAuthClientProperties.getId(),
-                securityOAuthClientProperties.getSecret());
+        ObjectRestResponse<String> accessToken = securityAuthClientFeign.getAccessToken(securityAuthClientProperties.getId(),
+                securityAuthClientProperties.getSecret());
         if (accessToken.getStatus() == HttpStatus.OK.value()){
             this.clientToken = accessToken.getData();
         }
@@ -67,8 +67,8 @@ public class ClientTokenStore {
         }
         log.info("【ClientTokenStore：refreshAllowedClient】开始刷新允许访问的微服务");
         //从鉴权服务器获取允许访问的微服务
-        ObjectRestResponse<List<String>> allowClient = securityAuthClientFeign.getAllowClient(securityOAuthClientProperties.getId(),
-                securityOAuthClientProperties.getSecret());
+        ObjectRestResponse<List<String>> allowClient = securityAuthClientFeign.getAllowClient(securityAuthClientProperties.getId(),
+                securityAuthClientProperties.getSecret());
         if (allowClient.getStatus() == HttpStatus.OK.value()){
             this.allowedClient = allowClient.getData();
         }else{
@@ -79,8 +79,9 @@ public class ClientTokenStore {
     }
 
     public List<String> getAllowedClient(){
-        if (this.allowedClient == null)
+        if (this.allowedClient == null) {
             refreshAllowedClient();
+        }
         return this.allowedClient;
     }
 

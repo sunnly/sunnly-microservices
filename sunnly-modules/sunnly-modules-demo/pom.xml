@@ -21,6 +21,8 @@
         <module>sunnly-modules-demo-cache</module>
         <module>sunnly-modules-demo-redis</module>
         <module>sunnly-modules-demo-mq</module>
+        <module>sunnly-modules-demo-logger</module>
+        <!--TODO list-->
         <module>sunnly-modules-demo-seata</module>
     </modules>
 </project>

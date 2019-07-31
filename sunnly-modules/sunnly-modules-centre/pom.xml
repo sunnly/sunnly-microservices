@@ -17,5 +17,6 @@
     <modules>
         <module>sunnly-modules-centre-auth</module>
         <module>sunnly-modules-centre-resource</module>
+        <module>sunnly-modules-centre-materials</module>
     </modules>
 </project>

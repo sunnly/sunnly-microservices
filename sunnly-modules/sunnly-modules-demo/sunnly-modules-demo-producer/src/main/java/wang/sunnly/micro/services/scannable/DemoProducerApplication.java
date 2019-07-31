@@ -7,6 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import tk.mybatis.spring.annotation.MapperScan;
 import wang.sunnly.micro.services.scannable.security.auth.annotation.EnableSunnlyClient;
+import wang.sunnly.micro.services.scannable.tools.logger.annotation.EnableSunnlyLogger;
 
 /**
  * DemoProducerApplication
@@ -21,6 +22,7 @@ import wang.sunnly.micro.services.scannable.security.auth.annotation.EnableSunnl
 //@EnableScheduling
 //@SunnlyClientEnable
 @EnableSunnlyClient
+@EnableSunnlyLogger
 @MapperScan("wang.sunnly.micro.services.scannable.demo.producer.mapper")
 public class DemoProducerApplication {
 

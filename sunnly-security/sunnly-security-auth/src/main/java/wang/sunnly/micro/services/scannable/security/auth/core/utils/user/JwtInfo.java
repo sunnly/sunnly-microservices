@@ -51,8 +51,8 @@ public class JwtInfo implements IJWTInfo, Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o){ return true;}
+        if (o == null || getClass() != o.getClass()){ return false;}
         JwtInfo jwtInfo = (JwtInfo) o;
 
         return (username != null ? Objects.equals(username,jwtInfo.username) : jwtInfo.username == null)

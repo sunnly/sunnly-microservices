@@ -34,7 +34,7 @@ public class SunnlyCacheForRedisConfiguration {
 
     //配置Key的生成策略
     @Bean
-    public KeyGenerator KeyGenerator() {
+    public KeyGenerator keyGenerator() {
         return new KeyGenerator() {
             @Override
             public Object generate(Object target, Method method, Object... params) {

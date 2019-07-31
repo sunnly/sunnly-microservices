@@ -50,7 +50,6 @@ sunnly:
         expire: 3600
 
 
-
 feign:
   httpclient:
     enabled: false
