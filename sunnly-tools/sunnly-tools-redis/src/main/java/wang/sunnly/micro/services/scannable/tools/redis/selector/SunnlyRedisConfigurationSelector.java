@@ -10,16 +10,16 @@ import wang.sunnly.micro.services.scannable.tools.redis.annotation.EnableSunnlyR
  */
 public class SunnlyRedisConfigurationSelector extends AbstractRedisModeImportSelector<EnableSunnlyRedis> {
 
-    private final String DEFAULTREDISTEMPLATE = "wang.sunnly.micro.services.scannable.tools.redis.config.RedisTemplateConfig";
-    private final String REDISTEMPLEGENERATOR = "wang.sunnly.micro.services.scannable.tools.redis.config.SunnlyRedisTempleGenerator";
+    private static final String DEFAULT_REDIS_TEMPLATE = "wang.sunnly.micro.services.scannable.tools.redis.config.SunnlyRedisTemplateConfig";
+    private static final String REDIS_TEMPLE_GENERATOR = "wang.sunnly.micro.services.scannable.tools.redis.config.SunnlyRedisTempleGenerator";
 
     @Override
     protected String[] selectImports(int size) {
         if(size == 0){
             //默认
-            return new String[]{DEFAULTREDISTEMPLATE};
+            return new String[]{DEFAULT_REDIS_TEMPLATE};
         }else{
-            return new String[]{REDISTEMPLEGENERATOR};
+            return new String[]{REDIS_TEMPLE_GENERATOR};
         }
     }
 
