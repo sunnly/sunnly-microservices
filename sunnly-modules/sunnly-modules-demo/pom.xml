@@ -24,5 +24,7 @@
         <module>sunnly-modules-demo-logger</module>
         <!--TODO list-->
         <module>sunnly-modules-demo-seata</module>
+        <module>sunnly-modules-test-spring</module>
+        <module>sunnly-modules-demo-verification</module>
     </modules>
 </project>
